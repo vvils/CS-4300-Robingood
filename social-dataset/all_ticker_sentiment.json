@@ -1,0 +1,442 @@
+{
+  "$AAPL": {
+    "Positive Sentiment Ratio": 35.71,
+    "Negative Sentiment Ratio": 64.29
+  },
+  "$ABBV": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$ABNB": {
+    "Positive Sentiment Ratio": 40.0,
+    "Negative Sentiment Ratio": 60.0
+  },
+  "$ABT": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$AFRM": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$AMC": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$AMCR": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$AMD": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$AMZN": {
+    "Positive Sentiment Ratio": 53.33,
+    "Negative Sentiment Ratio": 46.67
+  },
+  "$APE": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$ARKK": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$AUVI": {
+    "Positive Sentiment Ratio": 85.19,
+    "Negative Sentiment Ratio": 14.81
+  },
+  "$AVRO": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$BABA": {
+    "Positive Sentiment Ratio": 69.81,
+    "Negative Sentiment Ratio": 30.19
+  },
+  "$BAC": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$BB": {
+    "Positive Sentiment Ratio": 89.09,
+    "Negative Sentiment Ratio": 10.91
+  },
+  "$BBBY": {
+    "Positive Sentiment Ratio": 66.67,
+    "Negative Sentiment Ratio": 33.33
+  },
+  "$BLK": {
+    "Positive Sentiment Ratio": 37.5,
+    "Negative Sentiment Ratio": 62.5
+  },
+  "$BRDS": {
+    "Positive Sentiment Ratio": 94.44,
+    "Negative Sentiment Ratio": 5.56
+  },
+  "$BRK.B": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$CAT": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$CLOV": {
+    "Positive Sentiment Ratio": 69.14,
+    "Negative Sentiment Ratio": 30.86
+  },
+  "$COIN": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$COST": {
+    "Positive Sentiment Ratio": 70.0,
+    "Negative Sentiment Ratio": 30.0
+  },
+  "$CRSR": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$CTRA": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$CVS": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$DDOG": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$DIS": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$DKNG": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$DOCU": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$DOGE.X": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$DUK": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$EIFZF": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$EOG": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$F": {
+    "Positive Sentiment Ratio": 66.67,
+    "Negative Sentiment Ratio": 33.33
+  },
+  "$FRGE": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$GFAI": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$GLBE": {
+    "Positive Sentiment Ratio": 83.33,
+    "Negative Sentiment Ratio": 16.67
+  },
+  "$GM": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$GME": {
+    "Positive Sentiment Ratio": 91.67,
+    "Negative Sentiment Ratio": 8.33
+  },
+  "$GOOG": {
+    "Positive Sentiment Ratio": 66.67,
+    "Negative Sentiment Ratio": 33.33
+  },
+  "$HD": {
+    "Positive Sentiment Ratio": 76.92,
+    "Negative Sentiment Ratio": 23.08
+  },
+  "$HLF": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$HOOD": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$HPQ": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$IDRA": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$IIPR": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$IRM": {
+    "Positive Sentiment Ratio": 75.0,
+    "Negative Sentiment Ratio": 25.0
+  },
+  "$JMIA": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$JNJ": {
+    "Positive Sentiment Ratio": 75.0,
+    "Negative Sentiment Ratio": 25.0
+  },
+  "$KDP": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$KMDA": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$KO": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$LKNCY": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$LUV": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$LYFT": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$MCD": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$META": {
+    "Positive Sentiment Ratio": 75.0,
+    "Negative Sentiment Ratio": 25.0
+  },
+  "$MNMD": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$MSFT": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$MULN": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$NEGG": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$NFLX": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$NIO": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$NOK": {
+    "Positive Sentiment Ratio": 85.25,
+    "Negative Sentiment Ratio": 14.75
+  },
+  "$NVDA": {
+    "Positive Sentiment Ratio": 70.0,
+    "Negative Sentiment Ratio": 30.0
+  },
+  "$O": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$ONON": {
+    "Positive Sentiment Ratio": 57.14,
+    "Negative Sentiment Ratio": 42.86
+  },
+  "$PARA": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$PEP": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$PFE": {
+    "Positive Sentiment Ratio": 83.33,
+    "Negative Sentiment Ratio": 16.67
+  },
+  "$PLTR": {
+    "Positive Sentiment Ratio": 79.17,
+    "Negative Sentiment Ratio": 20.83
+  },
+  "$PPSI": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$PTON": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$PYPL": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$RBLX": {
+    "Positive Sentiment Ratio": 57.14,
+    "Negative Sentiment Ratio": 42.86
+  },
+  "$RIVN": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$ROKU": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$RSX": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$SARK": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$SBUX": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$SE": {
+    "Positive Sentiment Ratio": 81.82,
+    "Negative Sentiment Ratio": 18.18
+  },
+  "$SHAK": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$SHOP": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$SNAP": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$SNDL": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$SNOW": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$SOFI": {
+    "Positive Sentiment Ratio": 57.14,
+    "Negative Sentiment Ratio": 42.86
+  },
+  "$SPCE": {
+    "Positive Sentiment Ratio": 73.68,
+    "Negative Sentiment Ratio": 26.32
+  },
+  "$SQ": {
+    "Positive Sentiment Ratio": 87.18,
+    "Negative Sentiment Ratio": 12.82
+  },
+  "$SUNW": {
+    "Positive Sentiment Ratio": 72.73,
+    "Negative Sentiment Ratio": 27.27
+  },
+  "$SWA": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$SWKS": {
+    "Positive Sentiment Ratio": 50.0,
+    "Negative Sentiment Ratio": 50.0
+  },
+  "$TGT": {
+    "Positive Sentiment Ratio": 62.5,
+    "Negative Sentiment Ratio": 37.5
+  },
+  "$TLRY": {
+    "Positive Sentiment Ratio": 88.46,
+    "Negative Sentiment Ratio": 11.54
+  },
+  "$TSLA": {
+    "Positive Sentiment Ratio": 46.15,
+    "Negative Sentiment Ratio": 53.85
+  },
+  "$TWTR": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$UBER": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$UPST": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$UST": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$VIAC": {
+    "Positive Sentiment Ratio": 57.14,
+    "Negative Sentiment Ratio": 42.86
+  },
+  "$VTI": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$VYM": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$WBA": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$WEAT": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$WMT": {
+    "Positive Sentiment Ratio": 25.0,
+    "Negative Sentiment Ratio": 75.0
+  },
+  "$XBI": {
+    "Positive Sentiment Ratio": 0.0,
+    "Negative Sentiment Ratio": 100.0
+  },
+  "$XOM": {
+    "Positive Sentiment Ratio": 100.0,
+    "Negative Sentiment Ratio": 0.0
+  },
+  "$ZM": {
+    "Positive Sentiment Ratio": 65.91,
+    "Negative Sentiment Ratio": 34.09
+  }
+}

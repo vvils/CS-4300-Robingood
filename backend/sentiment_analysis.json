@@ -1,0 +1,932 @@
+[
+  {
+    "ticker": "AAPL",
+    "summary": "Discussions focus on earnings, growth, iphone, buying, product. Overall sentiment is strongly positive with 81.3% positive and 18.7% negative tweets.",
+    "sentiment": {
+      "description": "strongly positive",
+      "positive_percentage": 81.3,
+      "negative_percentage": 18.7,
+      "total_tweets": 17
+    }
+  },
+  {
+    "ticker": "AMD",
+    "summary": "Discussions focus on chips, earnings, nvidia, intel, quarter. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "AMZN",
+    "summary": "Discussions focus on earnings, cloud, growth, aws, quarter. Overall sentiment is strongly positive with 87.5% positive and 12.5% negative tweets.",
+    "sentiment": {
+      "description": "strongly positive",
+      "positive_percentage": 87.5,
+      "negative_percentage": 12.5,
+      "total_tweets": 9
+    }
+  },
+  {
+    "ticker": "BA",
+    "summary": "Discussions focus on boeing, safety, issues, problems, faa. Overall sentiment is strongly negative with 28.6% positive and 71.4% negative tweets.",
+    "sentiment": {
+      "description": "strongly negative",
+      "positive_percentage": 28.6,
+      "negative_percentage": 71.4,
+      "total_tweets": 7
+    }
+  },
+  {
+    "ticker": "BABA",
+    "summary": "Discussions focus on china, growth, earnings, quarter, report. Overall sentiment is positive with 75.0% positive and 25.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 75.0,
+      "negative_percentage": 25.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "BBY",
+    "summary": "Discussions focus on retail, earnings, sales, quarter, store. Overall sentiment is positive with 66.7% positive and 33.3% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 66.7,
+      "negative_percentage": 33.3,
+      "total_tweets": 7
+    }
+  },
+  {
+    "ticker": "BMY",
+    "summary": "Overall sentiment is neutral with 50.0% positive and 50.0% negative tweets.",
+    "sentiment": {
+      "description": "neutral",
+      "positive_percentage": 50.0,
+      "negative_percentage": 50.0,
+      "total_tweets": 2
+    }
+  },
+  {
+    "ticker": "BYND",
+    "summary": "Discussions focus on meat, sales, revenue, decline, plant. Overall sentiment is negative with 33.3% positive and 66.7% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 33.3,
+      "negative_percentage": 66.7,
+      "total_tweets": 3
+    }
+  },
+  {
+    "ticker": "C",
+    "summary": "Discussions focus on bank, financial, sector, quarter, results. Overall sentiment is positive with 66.7% positive and 33.3% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 66.7,
+      "negative_percentage": 33.3,
+      "total_tweets": 3
+    }
+  },
+  {
+    "ticker": "CAT",
+    "summary": "Discussions focus on construction, equipment, growth, manufacturing, industrial. Overall sentiment is positive with 66.7% positive and 33.3% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 66.7,
+      "negative_percentage": 33.3,
+      "total_tweets": 3
+    }
+  },
+  {
+    "ticker": "CMG",
+    "summary": "Discussions focus on burrito, food, store, chain, sales. Overall sentiment is strongly positive with 80.0% positive and 20.0% negative tweets.",
+    "sentiment": {
+      "description": "strongly positive",
+      "positive_percentage": 80.0,
+      "negative_percentage": 20.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "CRM",
+    "summary": "Discussions focus on software, cloud, growth, enterprise, business. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "CRSP",
+    "summary": "Discussions focus on gene, therapy, biotech, clinical, data. Overall sentiment is positive with 66.7% positive and 33.3% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 66.7,
+      "negative_percentage": 33.3,
+      "total_tweets": 3
+    }
+  },
+  {
+    "ticker": "CSCO",
+    "summary": "Discussions focus on networking, technology, demand, enterprise, revenue. Overall sentiment is positive with 75.0% positive and 25.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 75.0,
+      "negative_percentage": 25.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "CVS",
+    "summary": "Discussions focus on healthcare, pharmacy, services, retail, business. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "CVX",
+    "summary": "Discussions focus on oil, energy, production, prices, gas. Overall sentiment is positive with 75.0% positive and 25.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 75.0,
+      "negative_percentage": 25.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "DAL",
+    "summary": "Discussions focus on flights, travel, airline, summer, service. Overall sentiment is strongly positive with 100.0% positive and 0.0% negative tweets.",
+    "sentiment": {
+      "description": "strongly positive",
+      "positive_percentage": 100.0,
+      "negative_percentage": 0.0,
+      "total_tweets": 4
+    }
+  },
+  {
+    "ticker": "DIS",
+    "summary": "Discussions focus on disney, streaming, parks, content, revenue. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "DKNG",
+    "summary": "Discussions focus on betting, gaming, sports, growth, revenue. Overall sentiment is positive with 66.7% positive and 33.3% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 66.7,
+      "negative_percentage": 33.3,
+      "total_tweets": 6
+    }
+  },
+  {
+    "ticker": "DOW",
+    "summary": "Discussions focus on materials, chemical, industrial, manufacturing, demand. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "EBAY",
+    "summary": "Discussions focus on online, marketplace, sales, retail, ecommerce. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "F",
+    "summary": "Discussions focus on ford, electric, vehicles, cars, truck. Overall sentiment is positive with 66.7% positive and 33.3% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 66.7,
+      "negative_percentage": 33.3,
+      "total_tweets": 6
+    }
+  },
+  {
+    "ticker": "FB",
+    "summary": "Discussions focus on meta, social, platform, users, ads. Overall sentiment is negative with 40.0% positive and 60.0% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 40.0,
+      "negative_percentage": 60.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "FDX",
+    "summary": "Discussions focus on shipping, delivery, logistics, transportation, ecommerce. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "GE",
+    "summary": "Discussions focus on manufacturing, aerospace, power, industrial, energy. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "GILD",
+    "summary": "Discussions focus on biotech, drug, treatment, clinical, pharmaceutical. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "GM",
+    "summary": "Discussions focus on electric, vehicles, cars, motors, automotive. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "GOOG",
+    "summary": "Discussions focus on search, tech, google, ai, data. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "GS",
+    "summary": "Discussions focus on banking, financial, investment, wall, street. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "HD",
+    "summary": "Discussions focus on home, improvement, retail, consumer, spending. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "HON",
+    "summary": "Discussions focus on industrial, manufacturing, technology, aerospace, automation. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "IBM",
+    "summary": "Discussions focus on technology, cloud, business, enterprise, consulting. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "INTC",
+    "summary": "Discussions focus on chips, semiconductor, manufacturing, technology, amd. Overall sentiment is negative with 40.0% positive and 60.0% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 40.0,
+      "negative_percentage": 60.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "JNJ",
+    "summary": "Discussions focus on healthcare, pharmaceutical, vaccine, medical, products. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "JPM",
+    "summary": "Discussions focus on banking, financial, earnings, quarter, mortgage. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "K",
+    "summary": "Discussions focus on cereal, food, breakfast, consumer, products. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "KO",
+    "summary": "Discussions focus on beverage, coca, cola, consumer, drinks. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "LMT",
+    "summary": "Discussions focus on defense, aerospace, government, contracts, military. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "LOW",
+    "summary": "Discussions focus on home, improvement, retail, consumer, spending. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "LUV",
+    "summary": "Discussions focus on airlines, flights, travel, summer, fares. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MA",
+    "summary": "Discussions focus on payment, credit, card, financial, transactions. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MCD",
+    "summary": "Discussions focus on fast, food, restaurant, sales, menu. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MDLZ",
+    "summary": "Discussions focus on snack, food, consumer, brands, products. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "META",
+    "summary": "Discussions focus on facebook, social, platform, advertising, users. Overall sentiment is negative with 40.0% positive and 60.0% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 40.0,
+      "negative_percentage": 60.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MMM",
+    "summary": "Discussions focus on manufacturing, industrial, products, materials, business. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MO",
+    "summary": "Discussions focus on tobacco, cigarettes, smoking, dividend, yield. Overall sentiment is neutral with 50.0% positive and 50.0% negative tweets.",
+    "sentiment": {
+      "description": "neutral",
+      "positive_percentage": 50.0,
+      "negative_percentage": 50.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MRK",
+    "summary": "Discussions focus on pharmaceutical, drug, healthcare, clinical, trials. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MRNA",
+    "summary": "Discussions focus on vaccine, covid, biotech, development, clinical. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MS",
+    "summary": "Discussions focus on investment, banking, financial, wealth, management. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "MSFT",
+    "summary": "Discussions focus on cloud, azure, windows, enterprise, technology. Overall sentiment is strongly positive with 80.0% positive and 20.0% negative tweets.",
+    "sentiment": {
+      "description": "strongly positive",
+      "positive_percentage": 80.0,
+      "negative_percentage": 20.0,
+      "total_tweets": 10
+    }
+  },
+  {
+    "ticker": "NKE",
+    "summary": "Discussions focus on shoes, apparel, sports, athletic, brand. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "NVDA",
+    "summary": "Discussions focus on chips, gpu, semiconductor, computing, technology. Overall sentiment is positive with 70.0% positive and 30.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 70.0,
+      "negative_percentage": 30.0,
+      "total_tweets": 10
+    }
+  },
+  {
+    "ticker": "ORCL",
+    "summary": "Discussions focus on database, cloud, enterprise, software, business. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "PEP",
+    "summary": "Discussions focus on beverage, snack, food, consumer, products. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "PFE",
+    "summary": "Discussions focus on pharmaceutical, drug, vaccine, healthcare, covid. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "PG",
+    "summary": "Discussions focus on consumer, products, household, brands, goods. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "PLTR",
+    "summary": "Discussions focus on data, analytics, government, contracts, software. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "PYPL",
+    "summary": "Discussions focus on payment, digital, financial, platform, online. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "QCOM",
+    "summary": "Discussions focus on chips, semiconductor, mobile, technology, processor. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "RCL",
+    "summary": "Discussions focus on cruise, travel, ships, vacation, tourism. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "REGN",
+    "summary": "Discussions focus on biotech, drug, treatment, pharmaceutical, clinical. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "ROKU",
+    "summary": "Discussions focus on streaming, platform, content, advertising, device. Overall sentiment is negative with 40.0% positive and 60.0% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 40.0,
+      "negative_percentage": 60.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "RTX",
+    "summary": "Discussions focus on defense, aerospace, military, contracts, technology. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SBUX",
+    "summary": "Discussions focus on coffee, store, chain, revenue, sales. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SHOP",
+    "summary": "Discussions focus on ecommerce, online, platform, retail, merchants. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SJM",
+    "summary": "Discussions focus on food, consumer, products, brands, jelly. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SNE",
+    "summary": "Discussions focus on playstation, electronics, entertainment, gaming, consumer. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SNOW",
+    "summary": "Discussions focus on data, cloud, analytics, software, platform. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SONY",
+    "summary": "Discussions focus on playstation, electronics, entertainment, gaming, consumer. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SPG",
+    "summary": "Discussions focus on real, estate, mall, retail, property. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SPGI",
+    "summary": "Discussions focus on financial, services, ratings, analytics, data. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "SQ",
+    "summary": "Discussions focus on payment, financial, platform, digital, technology. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "T",
+    "summary": "Discussions focus on telecom, wireless, communications, dividend, services. Overall sentiment is negative with 40.0% positive and 60.0% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 40.0,
+      "negative_percentage": 60.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TGT",
+    "summary": "Discussions focus on retail, store, sales, consumer, shopping. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TJX",
+    "summary": "Discussions focus on retail, discount, store, sales, clothing. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TMO",
+    "summary": "Discussions focus on scientific, equipment, healthcare, laboratory, research. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TMUS",
+    "summary": "Discussions focus on wireless, telecom, mobile, network, coverage. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TSLA",
+    "summary": "Discussions focus on electric, cars, vehicles, musk, elon. Overall sentiment is positive with 65.0% positive and 35.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 65.0,
+      "negative_percentage": 35.0,
+      "total_tweets": 20
+    }
+  },
+  {
+    "ticker": "TSM",
+    "summary": "Discussions focus on semiconductor, chips, manufacturing, taiwan, production. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TSN",
+    "summary": "Discussions focus on food, meat, processing, protein, products. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "TXN",
+    "summary": "Discussions focus on semiconductor, chips, technology, electronics, manufacturing. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "UAA",
+    "summary": "Discussions focus on apparel, sports, athletic, clothing, brand. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "UAL",
+    "summary": "Discussions focus on airline, flights, travel, passengers, summer. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "UBER",
+    "summary": "Discussions focus on ride, sharing, drivers, transportation, services. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "UNH",
+    "summary": "Discussions focus on healthcare, insurance, medical, services, benefits. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "UPS",
+    "summary": "Discussions focus on shipping, delivery, logistics, package, transportation. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "V",
+    "summary": "Discussions focus on payment, credit, card, financial, transactions. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "VZ",
+    "summary": "Discussions focus on telecom, wireless, communications, network, coverage. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "WBA",
+    "summary": "Discussions focus on pharmacy, healthcare, retail, drug, stores. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "WFC",
+    "summary": "Discussions focus on banking, financial, mortgage, loans, interest. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "WMT",
+    "summary": "Discussions focus on retail, store, shopping, consumer, sales. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "XOM",
+    "summary": "Discussions focus on oil, energy, gas, production, prices. Overall sentiment is positive with 60.0% positive and 40.0% negative tweets.",
+    "sentiment": {
+      "description": "positive",
+      "positive_percentage": 60.0,
+      "negative_percentage": 40.0,
+      "total_tweets": 5
+    }
+  },
+  {
+    "ticker": "ZM",
+    "summary": "Discussions focus on video, conferencing, meetings, remote, work. Overall sentiment is negative with 40.0% positive and 60.0% negative tweets.",
+    "sentiment": {
+      "description": "negative",
+      "positive_percentage": 40.0,
+      "negative_percentage": 60.0,
+      "total_tweets": 5
+    }
+  }
+]

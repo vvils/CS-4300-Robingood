@@ -4,85 +4,231 @@ from collections import defaultdict
 import math
 import nltk
 from nltk.corpus import stopwords
-# from nltk.tokenize import word_tokenize
-# from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
+
 
 class EthicalInvestmentQuerySystem:
-    def __init__(self, stocks_data):
-        
-        # Map possible terms in queries to the corresponding ESG factors
+    def __init__(self, stocks_data, sentiment_data=None):
+
+        self.sentiment_data = {}
+        if sentiment_data:
+            for item in sentiment_data:
+                self.sentiment_data[item["ticker"]] = item
+
         self.field_mappings = {
-            "environmental": ["environmentScore", "environment", "eco", "green", "sustainable", "carbon", "climate"],
-            "social": ["socialScore", "society", "community", "people", "ethical", "human rights", "social responsibility"],
-            "governance": ["governanceScore", "management", "leadership", "board", "transparency", "corporate governance"],
-            "esg": ["totalEsg", "sustainability", "responsible", "ethical investing", "sustainable investing"],
-            "risk": ["overallRisk", "risky", "danger", "safe", "safety", "volatility", "stability"],
-            "controversy": ["highestControversy", "controversial", "scandal", "dispute", "issue", "problems"],
-            "market cap": ["marketCap", "size", "capitalization", "market value", "company size", "large cap", "small cap"],
-            "beta": ["beta", "volatility", "stable", "stability", "market risk", "market sensitivity"],
-            "percentile": ["percentile", "rank", "standing", "position", "rating", "relative performance"],
+            "environmental": [
+                "environmentScore",
+                "environment",
+                "eco",
+                "green",
+                "sustainable",
+                "carbon",
+                "climate",
+            ],
+            "social": [
+                "socialScore",
+                "society",
+                "community",
+                "people",
+                "ethical",
+                "human rights",
+                "social responsibility",
+            ],
+            "governance": [
+                "governanceScore",
+                "management",
+                "leadership",
+                "board",
+                "transparency",
+                "corporate governance",
+            ],
+            "esg": [
+                "totalEsg",
+                "sustainability",
+                "responsible",
+                "ethical investing",
+                "sustainable investing",
+            ],
+            "risk": [
+                "overallRisk",
+                "risky",
+                "danger",
+                "safe",
+                "safety",
+                "volatility",
+                "stability",
+            ],
+            "controversy": [
+                "highestControversy",
+                "controversial",
+                "scandal",
+                "dispute",
+                "issue",
+                "problems",
+            ],
+            "market cap": [
+                "marketCap",
+                "size",
+                "capitalization",
+                "market value",
+                "company size",
+                "large cap",
+                "small cap",
+            ],
+            "beta": [
+                "beta",
+                "volatility",
+                "stable",
+                "stability",
+                "market risk",
+                "market sensitivity",
+            ],
+            "percentile": [
+                "percentile",
+                "rank",
+                "standing",
+                "position",
+                "rating",
+                "relative performance",
+            ],
             "sector": ["GICS Sector", "industry", "field", "domain", "market segment"],
+            "sentiment": [
+                "sentiment",
+                "social sentiment",
+                "public opinion",
+                "market sentiment",
+                "tweets",
+                "social media",
+                "twitter",
+                "buzz",
+                "popular opinion",
+            ],
         }
         self.reverse_mappings = {}
         for key, values in self.field_mappings.items():
             for value in values:
                 self.reverse_mappings[value] = key
 
-        # Define modifiers for positive and negative terms
-        self.modifiers = {"high": ["high", "good", "strong", "great", "impressive", "positive", "large", "big", "higher", "better"], 
-                          "low": ["low", "bad", "weak", "poor", "negative", "minimal", "small", "lower", "worse"]}
+        self.modifiers = {
+            "high": [
+                "high",
+                "good",
+                "strong",
+                "great",
+                "impressive",
+                "positive",
+                "large",
+                "big",
+                "higher",
+                "better",
+            ],
+            "low": [
+                "low",
+                "bad",
+                "weak",
+                "poor",
+                "negative",
+                "minimal",
+                "small",
+                "lower",
+                "worse",
+            ],
+        }
         self.reverse_modifiers = {}
         for key, values in self.modifiers.items():
             for value in values:
                 self.reverse_modifiers[value] = 1.0 if key == "high" else -1.0
 
-        # Define intensifiers for increasing or decreasing importance
-        self.intensifiers = {"very": 1.5, "extremely": 2.0, "highly": 1.7, "incredibly": 1.8, "somewhat": 0.7, "slightly": 0.5, "a bit": 0.6, "a lot": 1.6, "tremendously": 1.9, "exceptionally": 1.8, "moderately": 0.8}
+        self.intensifiers = {
+            "very": 1.5,
+            "extremely": 2.0,
+            "highly": 1.7,
+            "incredibly": 1.8,
+            "somewhat": 0.7,
+            "slightly": 0.5,
+            "a bit": 0.6,
+            "a lot": 1.6,
+            "tremendously": 1.9,
+            "exceptionally": 1.8,
+            "moderately": 0.8,
+        }
 
-        # Define negations to invert the meaning of terms
         self.negations = ["not", "no", "never", "neither", "nor", "barely", "hardly"]
 
         self.sectors = [
             "information technology",
+            "tech",
             "health care",
+            "healthcare",
             "financials",
+            "financial",
+            "banks",
             "consumer discretionary",
+            "retail",
             "communication services",
+            "telecom",
+            "media",
             "industrials",
+            "manufacturing",
             "consumer staples",
+            "food",
+            "beverages",
             "energy",
+            "oil",
+            "gas",
             "utilities",
             "real estate",
+            "property",
             "materials",
+            "basic materials",
+            "mining",
         ]
+
+        self.sector_mapping = {
+            "tech": "information technology",
+            "technology": "information technology",
+            "healthcare": "health care",
+            "medical": "health care",
+            "pharma": "health care",
+            "pharmaceutical": "health care",
+            "financial": "financials",
+            "banks": "financials",
+            "banking": "financials",
+            "insurance": "financials",
+            "retail": "consumer discretionary",
+            "telecom": "communication services",
+            "media": "communication services",
+            "telecommunications": "communication services",
+            "manufacturing": "industrials",
+            "industrial": "industrials",
+            "food": "consumer staples",
+            "beverages": "consumer staples",
+            "household": "consumer staples",
+            "oil": "energy",
+            "gas": "energy",
+            "petroleum": "energy",
+            "renewable energy": "energy",
+            "property": "real estate",
+            "mining": "materials",
+            "basic materials": "materials",
+            "chemicals": "materials",
+        }
 
         self.normalized_data = self.normalize_stock_data(stocks_data)
 
-        # Load stopwords for filtering out common words
+        self.available_sectors = set()
+        for stock in stocks_data:
+            if "GICS Sector" in stock and stock["GICS Sector"]:
+                self.available_sectors.add(stock["GICS Sector"].lower())
+
         try:
-            self.stopwords = set(stopwords.words('english'))
+            self.stopwords = set(stopwords.words("english"))
         except LookupError:
-            nltk.download('stopwords')
-            self.stopwords = set(stopwords.words('english'))
-
-        # # Load tokenizer
-        # try:
-        #     self.tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
-        # except LookupError:
-        #     nltk.download('punkt_tab')
-        #     self.tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
-
-        # # Load stemmer
-        # try:
-        #     self.stemmer = PorterStemmer()
-        # except LookupError:
-        #     nltk.download('punkt_tab')
-        #     self.stemmer = PorterStemmer()
+            nltk.download("stopwords")
+            self.stopwords = set(stopwords.words("english"))
 
     def tokenize(self, text):
         """Simple tokenization by splitting on spaces and removing punctuation"""
-        # TODO 1: destroys phrases like carbon-neutral
-        # return nltk.word_tokenize(text)
         text = text.lower()
         text = re.sub(r"\s+", " ", text)
 
@@ -97,82 +243,22 @@ class EthicalInvestmentQuerySystem:
 
         return tokens
 
-    def parse_query(self, query_text):
-        """
-        Parse a natural language query and convert it to a weighted vector
-        representing the importance of different factors
-        """
-        tokens = self.tokenize(query_text)
-        query_vector = defaultdict(float)
-        negation_active = False
-        window_size = 4
-        specified_sectors = []
-
-        # Should do a hard filter
-        for token in tokens:
-            # TODO 2: Improve synonym mapping + fuzzy matching, misses variants (tech =/= info tech)
-            if token in self.sectors:
-                specified_sectors.append(token)
-
-        for i in range(len(tokens)):
-            if tokens[i] in self.negations:
-                negation_active = True
-                continue
-
-            if (
-                tokens[i] in self.stopwords
-                and tokens[i] not in self.intensifiers
-                and tokens[i] not in self.negations
-            ):
-                continue
-
-            # Get the field match in field_mappings
-            field_match = None
-            for field_key, synonyms in self.field_mappings.items():
-                if tokens[i] in synonyms or tokens[i] == field_key:
-                    field_match = field_key
-                    break
-
-            if field_match:
-                # Get the dimension of vector 
-                field_value = self.field_mappings[field_match][0]
-
-                modifier_value = 0.0
-                intensifier_value = 1.0
-
-                for j in range(max(0, i - window_size), i):
-                    # Update intensifier and modifiers values 
-                    if tokens[j] in self.intensifiers:
-                        intensifier_value *= self.intensifiers[tokens[j]]
-                    if tokens[j] in self.reverse_modifiers:
-                        modifier_value = self.reverse_modifiers[tokens[j]]
-
-                if modifier_value == 0.0:
-                    if field_match in ["environmental", "social", "governance", "esg"]:
-                        modifier_value = 1.0
-                    elif field_match in ["risk", "controversy", "beta"]:
-                        modifier_value = -1.0
-                    else:
-                        modifier_value = 1.0
-
-                if negation_active:
-                    modifier_value *= -1
-                    negation_active = False
-
-                query_vector[field_value] = modifier_value * intensifier_value
-
-        if specified_sectors:
-            query_vector["specified_sectors"] = specified_sectors
-
-        return dict(query_vector)
-
     def normalize_stock_data(self, stocks_data):
         """
         Normalize stock data to make features comparable
         """
 
-        features = ["environmentScore", "socialScore", "governanceScore", "totalEsg", 
-                    "overallRisk", "highestControversy", "marketCap", "beta", "percentile"]
+        features = [
+            "environmentScore",
+            "socialScore",
+            "governanceScore",
+            "totalEsg",
+            "overallRisk",
+            "highestControversy",
+            "marketCap",
+            "beta",
+            "percentile",
+        ]
 
         feature_arrays = {}
         for feature in features:
@@ -214,16 +300,90 @@ class EthicalInvestmentQuerySystem:
 
         return normalized_data
 
-    def cosine_similarity(self, stock, query_vector):
-        query_magnitude = math.sqrt(sum(w**2 for w in query_vector.values()))
-        stock_vector = [stock[field] for field in query_vector]
-        stock_magnitude = math.sqrt(sum(v**2 for v in stock_vector))
-        
-        if query_magnitude == 0 or stock_magnitude == 0:
-            return 0
-            
-        dot_product = sum(w * stock[field] for field, w in query_vector.items())
-        return dot_product / (query_magnitude * stock_magnitude)
+    def parse_query(self, query_text):
+        """
+        Parse a natural language query and convert it to a weighted vector
+        representing the importance of different factors
+        """
+        tokens = self.tokenize(query_text)
+        query_vector = defaultdict(float)
+        negation_active = False
+        window_size = 4
+        specified_sectors = []
+
+        sentiment_mentioned = any(
+            token in self.field_mappings["sentiment"] for token in tokens
+        )
+
+        for token in tokens:
+
+            if token in self.sectors:
+
+                sector = self.sector_mapping.get(token, token)
+                specified_sectors.append(sector)
+
+            elif token in self.sector_mapping:
+                specified_sectors.append(self.sector_mapping[token])
+
+        if not specified_sectors:
+            for sector in self.available_sectors:
+                sector_tokens = self.tokenize(sector)
+                if any(token in sector_tokens for token in tokens):
+                    specified_sectors.append(sector)
+
+        for i in range(len(tokens)):
+            if tokens[i] in self.negations:
+                negation_active = True
+                continue
+
+            if (
+                tokens[i] in self.stopwords
+                and tokens[i] not in self.intensifiers
+                and tokens[i] not in self.negations
+            ):
+                continue
+
+            field_match = None
+            for field_key, synonyms in self.field_mappings.items():
+                if tokens[i] in synonyms or tokens[i] == field_key:
+                    field_match = field_key
+                    break
+
+            if field_match:
+
+                field_value = self.field_mappings[field_match][0]
+
+                modifier_value = 0.0
+                intensifier_value = 1.0
+
+                for j in range(max(0, i - window_size), i):
+
+                    if tokens[j] in self.intensifiers:
+                        intensifier_value *= self.intensifiers[tokens[j]]
+                    if tokens[j] in self.reverse_modifiers:
+                        modifier_value = self.reverse_modifiers[tokens[j]]
+
+                if modifier_value == 0.0:
+                    if field_match in ["environmental", "social", "governance", "esg"]:
+                        modifier_value = 1.0
+                    elif field_match in ["risk", "controversy", "beta"]:
+                        modifier_value = -1.0
+                    else:
+                        modifier_value = 1.0
+
+                if negation_active:
+                    modifier_value *= -1
+                    negation_active = False
+
+                query_vector[field_value] = modifier_value * intensifier_value
+
+        if specified_sectors:
+            query_vector["specified_sectors"] = specified_sectors
+
+        if sentiment_mentioned:
+            query_vector["include_sentiment"] = True
+
+        return dict(query_vector)
 
     def calculate_similarity(self, stock, query_vector):
         """
@@ -240,7 +400,11 @@ class EthicalInvestmentQuerySystem:
                 return 0.0
 
         for field, weight in query_vector.items():
-            if field != "specified_sectors" and field in stock and weight != 0.0:
+            if (
+                field not in ["specified_sectors", "include_sentiment"]
+                and field in stock
+                and weight != 0.0
+            ):
                 score += weight * float(stock[field])
                 total_weight += abs(weight)
 
@@ -249,31 +413,151 @@ class EthicalInvestmentQuerySystem:
 
         return score
 
-    def rank_stocks(self, stocks_data, query_text):
+    def calculate_sector_similarity(self, query, stock):
         """
-        Rank stocks based on how well they match the query
+        Calculate how well a stock's sector matches the query.
+        Returns a score between 0 and 1, with higher values indicating better matches.
+        """
+        if not stock.get("GICS Sector"):
+            return 0.0
+
+        stock_sector = stock["GICS Sector"].lower()
+        query_tokens = self.tokenize(query)
+
+        for token in query_tokens:
+
+            if token in self.sectors and (
+                token == stock_sector
+                or self.sector_mapping.get(token, "") == stock_sector
+            ):
+                return 1.0
+
+            if (
+                token in self.sector_mapping
+                and self.sector_mapping[token] == stock_sector
+            ):
+                return 1.0
+
+        sector_tokens = self.tokenize(stock_sector)
+        matches = set(query_tokens).intersection(set(sector_tokens))
+        if matches:
+            return 0.8 * (len(matches) / len(sector_tokens))
+
+        return 0.0
+
+    def calculate_name_similarity(self, query, stock_name):
+        """
+        Calculate text similarity between query and stock name
+        Returns a score between 0 and 1
+        """
+        query = query.lower()
+        stock_name = stock_name.lower()
+
+        query_tokens = [t for t in self.tokenize(query) if t not in self.stopwords]
+
+        if not query_tokens:
+            return 0.0
+
+        direct_match = 0.0
+        for token in query_tokens:
+            if token in stock_name:
+                direct_match += 1.0
+        direct_match = direct_match / len(query_tokens) if query_tokens else 0.0
+
+        stock_tokens = self.tokenize(stock_name)
+        common_tokens = set(query_tokens).intersection(set(stock_tokens))
+        token_similarity = (
+            len(common_tokens) / len(query_tokens) if query_tokens else 0.0
+        )
+
+        return (direct_match * 0.6) + (token_similarity * 0.4)
+
+    def calculate_content_similarity(self, query, stock):
+        """
+        Calculate overall similarity between query and stock metadata
+        with priority: sector > name > symbol
         """
 
+        symbol = stock.get("Symbol", "").lower()
+        query_lower = query.lower()
+        symbol_score = 1.0 if query_lower == symbol.lower() else 0.0
+
+        sector_score = self.calculate_sector_similarity(query, stock)
+
+        name_score = self.calculate_name_similarity(query, stock["Full Name"])
+
+        if symbol_score > 0:
+            return {"score": symbol_score, "match_type": "symbol_match"}
+
+        elif sector_score > 0:
+            return {"score": sector_score, "match_type": "sector_match"}
+
+        elif name_score > 0:
+            return {"score": name_score, "match_type": "name_match"}
+
+        else:
+            return {"score": 0.0, "match_type": "no_match"}
+
+    def rank_stocks(self, stocks_data, query_text):
+        """
+        Rank stocks based on how well they match the query with priority:
+        1. ESG terms (highest)
+        2. Sector names (middle)
+        3. Stock names (lowest)
+        """
         query_vector = self.parse_query(query_text)
+
+        has_esg_keywords = False
+        for field, weight in query_vector.items():
+            if (
+                field not in ["specified_sectors", "include_sentiment"]
+                and weight != 0.0
+            ):
+                has_esg_keywords = True
+                break
 
         scores = []
         for stock in self.normalized_data:
-            score = self.calculate_similarity(stock, query_vector)
-            # score = self.cosine_similarity(stock, query_vector)
+            if has_esg_keywords:
+
+                score = self.calculate_similarity(stock, query_vector)
+                match_type = "esg_factors"
+            else:
+
+                result = self.calculate_content_similarity(query_text, stock)
+                score = result["score"]
+                match_type = result["match_type"]
+
             if score > 0:
-                scores.append(
-                    {
-                        "symbol": stock["Symbol"],
-                        "name": stock["Full Name"],
-                        "score": score,
-                        "sector": stock.get("GICS Sector", "Unknown"),
-                        "environmentScore": float(stock.get("environmentScore", 0)),
-                        "socialScore": float(stock.get("socialScore", 0)),
-                        "governanceScore": float(stock.get("governanceScore", 0)),
-                        "totalEsg": float(stock.get("totalEsg", 0)),
-                        "overallRisk": int(float(stock.get("overallRisk", 0))),
+                result = {
+                    "symbol": stock["Symbol"],
+                    "name": stock["Full Name"],
+                    "score": score,
+                    "sector": stock.get("GICS Sector", "Unknown"),
+                    "match_type": match_type,
+                    "environmentScore": float(stock.get("environmentScore", 0)),
+                    "socialScore": float(stock.get("socialScore", 0)),
+                    "governanceScore": float(stock.get("governanceScore", 0)),
+                    "totalEsg": float(stock.get("totalEsg", 0)),
+                    "overallRisk": int(float(stock.get("overallRisk", 0))),
+                }
+
+                ticker = stock["Symbol"]
+                if ticker in self.sentiment_data:
+                    sentiment_info = self.sentiment_data[ticker]
+                    result["sentiment"] = {
+                        "description": sentiment_info["sentiment"]["description"],
+                        "positive_percentage": sentiment_info["sentiment"][
+                            "positive_percentage"
+                        ],
+                        "negative_percentage": sentiment_info["sentiment"][
+                            "negative_percentage"
+                        ],
+                        "total_tweets": sentiment_info["sentiment"]["total_tweets"],
+                        "summary": sentiment_info["summary"],
                     }
-                )
+
+                scores.append(result)
 
         scores.sort(key=lambda x: x["score"], reverse=True)
         return scores
@@ -345,3 +629,9 @@ def load_stock_data(json_text):
             except Exception as e:
                 print(f"Error during manual parsing: {e}")
                 return []
+
+
+def load_sentiment_data(file_path):
+    """Load sentiment data from a JSON file"""
+    with open(file_path, "r") as file:
+        return json.load(file)

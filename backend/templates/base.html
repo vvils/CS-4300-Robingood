@@ -1,349 +1,538 @@
-<!doctype html>
+<!DOCTYPE html>
 <title>{% block title %}{% endblock %} - Robingood</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
 
-    :root {
-        --primary: #4CAF50;
-        --primary-dark: #388E3C;
-        --light-green: #E8F5E9;
-        --text-dark: #212121;
-        --text-light: #757575;
-        --background: #FAFAFA;
-        --card-bg: #FFFFFF;
-        --border: #E0E0E0;
-        --shadow: rgba(0, 0, 0, 0.1);
-    }
+  :root {
+    --primary: #4caf50;
+    --primary-dark: #388e3c;
+    --light-green: #e8f5e9;
+    --text-dark: #212121;
+    --text-light: #757575;
+    --background: #fafafa;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
 
-    body {
-        background-color: var(--background);
-        color: var(--text-dark);
-        min-height: 100vh;
-    }
+  body {
+    background-color: var(--background);
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
 
-    .full-body-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
+  .full-body-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -1px;
+  }
+
+  .logo-leaf {
+    color: var(--primary);
+    margin-right: 0.5rem;
+    font-size: 2.2rem;
+  }
+
+  .search-container {
+    flex-grow: 1;
+    max-width: 600px;
+  }
+
+  .input-box {
+    background-color: var(--card-bg);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .input-box:focus-within {
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.2);
+    border-color: var(--primary);
+  }
+
+  .input-box img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+  }
+
+  .input-box input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    background: transparent;
+  }
+
+  #answer-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .result {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary);
+  }
+
+  .result:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .result h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
+  .result p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+  }
+
+  .result p span:first-child {
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  .result p span:last-child {
+    font-weight: 600;
+  }
+
+  .meter {
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    position: relative;
+    margin-top: 2px;
+    overflow: hidden;
+  }
+
+  .meter-fill {
+    position: absolute;
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+
+  .meter-env {
+    background-color: #4caf50;
+  }
+
+  .meter-soc {
+    background-color: #2196f3;
+  }
+
+  .meter-gov {
+    background-color: #9c27b0;
+  }
+
+  .meter-total {
+    background-color: #ff9800;
+  }
+
+  .risk-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .risk-low {
+    background-color: #e8f5e9;
+    color: #388e3c;
+  }
+
+  .risk-medium {
+    background-color: #fff8e1;
+    color: #ffa000;
+  }
+
+  .risk-high {
+    background-color: #ffebee;
+    color: #d32f2f;
+  }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+  }
+
+  /* New Sentiment Styles */
+  .sentiment-section {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .sentiment-section h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sentiment-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .sentiment-positive {
+    background-color: #e8f5e9;
+    color: #388e3c;
+  }
+
+  .sentiment-strongly-positive {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+  }
+
+  .sentiment-negative {
+    background-color: #ffebee;
+    color: #d32f2f;
+  }
+
+  .sentiment-strongly-negative {
+    background-color: #ffcdd2;
+    color: #c62828;
+  }
+
+  .sentiment-neutral {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+
+  .meter-positive {
+    background-color: #4caf50;
+  }
+
+  .meter-negative {
+    background-color: #f44336;
+  }
+
+  .sentiment-summary {
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+    line-height: 1.3;
+    color: var(--text-light);
+  }
+
+  .sentiment-meters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .sentiment-meters p {
+    margin-bottom: 0.2rem;
+  }
+
+  .no-data {
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
     .top-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 2.5rem;
-        flex-wrap: wrap;
-        gap: 1.5rem;
+      flex-direction: column;
+      align-items: stretch;
     }
 
     .logo {
-        display: flex;
-        align-items: center;
-    }
-
-    .logo h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--primary);
-        letter-spacing: -1px;
-    }
-
-    .logo-leaf {
-        color: var(--primary);
-        margin-right: 0.5rem;
-        font-size: 2.2rem;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
 
     .search-container {
-        flex-grow: 1;
-        max-width: 600px;
-    }
-
-    .input-box {
-        background-color: var(--card-bg);
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        padding: 0.25rem 1.5rem;
-        box-shadow: 0 4px 12px var(--shadow);
-        border: 1px solid var(--border);
-        transition: all 0.3s ease;
-    }
-
-    .input-box:focus-within {
-        box-shadow: 0 6px 16px rgba(76, 175, 80, 0.2);
-        border-color: var(--primary);
-    }
-
-    .input-box img {
-        width: 20px;
-        height: 20px;
-        opacity: 0.6;
-    }
-
-    .input-box input {
-        flex-grow: 1;
-        border: none;
-        padding: 0.8rem 1rem;
-        font-size: 1rem;
-        outline: none;
-        width: 100%;
-        background: transparent;
+      max-width: 100%;
     }
 
     #answer-box {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+      grid-template-columns: 1fr;
     }
-
-    .result {
-        background-color: var(--card-bg);
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 10px var(--shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-top: 4px solid var(--primary);
-    }
-
-    .result:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .result h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        color: var(--primary-dark);
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 0.5rem;
-    }
-
-    .result p {
-        margin-bottom: 0.5rem;
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.95rem;
-    }
-
-    .result p span:first-child {
-        color: var(--text-light);
-        font-weight: 500;
-    }
-
-    .result p span:last-child {
-        font-weight: 600;
-    }
-
-    .meter {
-        height: 4px;
-        background-color: #e0e0e0;
-        border-radius: 2px;
-        position: relative;
-        margin-top: 2px;
-        overflow: hidden;
-    }
-
-    .meter-fill {
-        position: absolute;
-        height: 100%;
-        border-radius: 2px;
-        transition: width 0.5s ease;
-    }
-
-    .meter-env {
-        background-color: #4CAF50;
-    }
-
-    .meter-soc {
-        background-color: #2196F3;
-    }
-
-    .meter-gov {
-        background-color: #9C27B0;
-    }
-
-    .meter-total {
-        background-color: #FF9800;
-    }
-
-    .risk-badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-
-    .risk-low {
-        background-color: #e8f5e9;
-        color: #388e3c;
-    }
-
-    .risk-medium {
-        background-color: #fff8e1;
-        color: #ffa000;
-    }
-
-    .risk-high {
-        background-color: #ffebee;
-        color: #d32f2f;
-    }
-
-    .empty-state {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 2rem;
-        color: var(--text-light);
-    }
-
-    @media (max-width: 768px) {
-        .top-bar {
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        .logo {
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        .search-container {
-            max-width: 100%;
-        }
-
-        #answer-box {
-            grid-template-columns: 1fr;
-        }
-    }
+  }
 </style>
 
 <body>
-    <div class="full-body-container">
-        <div class="top-bar">
-            <div class="logo">
-                <span class="logo-leaf">🍃</span>
-                <h1>Robingood</h1>
-            </div>
-            <div class="search-container">
-                <div class="input-box" onclick="sendFocus()">
-                    <img src="{{ url_for('static', filename='images/mag.png') }}" alt="Search icon" />
-                    <input placeholder="Search for stocks by ESG criteria" id="filter-text-val" onkeyup="filterText()">
-                </div>
-            </div>
+  <div class="full-body-container">
+    <div class="top-bar">
+      <div class="logo">
+        <span class="logo-leaf">🍃</span>
+        <h1>Robingood</h1>
+      </div>
+      <div class="search-container">
+        <div class="input-box" onclick="sendFocus()">
+          <img
+            src="{{ url_for('static', filename='images/mag.png') }}"
+            alt="Search icon"
+          />
+          <input
+            placeholder="Search for stocks by ESG criteria"
+            id="filter-text-val"
+            onkeyup="filterText()"
+          />
         </div>
-        <div id="answer-box">
-            <!-- Results -->
-        </div>
+      </div>
     </div>
+    <div id="answer-box">
+      <!-- Results -->
+    </div>
+  </div>
 
-    <script>
-        function determineRiskClass(risk) {
-            risk = String(risk).toLowerCase();
-            if (risk.includes('low')) return 'risk-low';
-            if (risk.includes('medium')) return 'risk-medium';
-            return 'risk-high';
-        }
+  <script>
+    function getSentimentClass(description) {
+      if (!description) return "";
 
+      if (description.includes("strongly positive")) {
+        return "sentiment-strongly-positive";
+      } else if (description.includes("positive")) {
+        return "sentiment-positive";
+      } else if (description.includes("strongly negative")) {
+        return "sentiment-strongly-negative";
+      } else if (description.includes("negative")) {
+        return "sentiment-negative";
+      } else {
+        return "sentiment-neutral";
+      }
+    }
 
-        function getScoreFill(score) {
-            return Math.min(100, Math.max(0, score * 100)) + '%';
-        }
+    function determineRiskClass(risk) {
+      risk = String(risk).toLowerCase();
+      if (risk.includes("low")) return "risk-low";
+      if (risk.includes("medium")) return "risk-medium";
+      return "risk-high";
+    }
 
+    function getScoreFill(score) {
+      return Math.min(100, Math.max(0, score * 100)) + "%";
+    }
 
-        function answerBoxTemplate(name, symbol, score, sector, environmentScore, socialScore, governanceScore, totalEsg, overallRisk) {
-            const riskClass = determineRiskClass(overallRisk);
+    function answerBoxTemplate(stock) {
+      const {
+        name,
+        symbol,
+        score,
+        sector,
+        environmentScore,
+        socialScore,
+        governanceScore,
+        totalEsg,
+        overallRisk,
+        sentiment,
+      } = stock;
 
-            return `
+      const riskClass = determineRiskClass(overallRisk);
+
+      // Create sentiment HTML
+      let sentimentHTML = "";
+
+      if (sentiment) {
+        const sentimentClass = getSentimentClass(sentiment.description);
+
+        sentimentHTML = `
+            <div class="sentiment-section">
+                <h4>
+                    Social Sentiment
+                    <span class="sentiment-badge ${sentimentClass}">${
+          sentiment.description
+        }</span>
+                </h4>
+                
+                <div class="sentiment-summary">${sentiment.summary}</div>
+                
+                <div class="sentiment-meters">
+                    <div>
+                        <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
+                          1
+                        )}%</span></p>
+                        <div class="meter">
+                            <div class="meter-fill meter-positive" style="width: ${
+                              sentiment.positive_percentage
+                            }%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
+                          1
+                        )}%</span></p>
+                        <div class="meter">
+                            <div class="meter-fill meter-negative" style="width: ${
+                              sentiment.negative_percentage
+                            }%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${
+                  sentiment.total_tweets
+                } tweets</p>
+            </div>
+        `;
+      } else {
+        sentimentHTML = `
+            <div class="sentiment-section">
+                <h4>Social Sentiment</h4>
+                <p class="no-data">No social sentiment data available</p>
+            </div>
+        `;
+      }
+
+      return `
                 <div class="result">
                     <h3>${name} <small>${symbol}</small></h3>
                     
                     <p><span>Sector</span> <span>${sector}</span></p>
                     <p><span>Score</span> <span>${score.toFixed(3)}</span></p>
                     
-                    <p><span>Environment</span> <span>${environmentScore.toFixed(2)}</span></p>
+                    <p><span>Environment</span> <span>${environmentScore.toFixed(
+                      2
+                    )}</span></p>
                     <div class="meter">
-                        <div class="meter-fill meter-env" style="width: ${getScoreFill(environmentScore)}"></div>
+                        <div class="meter-fill meter-env" style="width: ${getScoreFill(
+                          environmentScore
+                        )}"></div>
                     </div>
                     
-                    <p><span>Social</span> <span>${socialScore.toFixed(2)}</span></p>
+                    <p><span>Social</span> <span>${socialScore.toFixed(
+                      2
+                    )}</span></p>
                     <div class="meter">
-                        <div class="meter-fill meter-soc" style="width: ${getScoreFill(socialScore)}"></div>
+                        <div class="meter-fill meter-soc" style="width: ${getScoreFill(
+                          socialScore
+                        )}"></div>
                     </div>
                     
-                    <p><span>Governance</span> <span>${governanceScore.toFixed(2)}</span></p>
+                    <p><span>Governance</span> <span>${governanceScore.toFixed(
+                      2
+                    )}</span></p>
                     <div class="meter">
-                        <div class="meter-fill meter-gov" style="width: ${getScoreFill(governanceScore)}"></div>
+                        <div class="meter-fill meter-gov" style="width: ${getScoreFill(
+                          governanceScore
+                        )}"></div>
                     </div>
                     
-                    <p><span>Total ESG</span> <span>${totalEsg.toFixed(2)}</span></p>
+                    <p><span>Total ESG</span> <span>${totalEsg.toFixed(
+                      2
+                    )}</span></p>
                     <div class="meter">
-                        <div class="meter-fill meter-total" style="width: ${getScoreFill(totalEsg)}"></div>
+                        <div class="meter-fill meter-total" style="width: ${getScoreFill(
+                          totalEsg
+                        )}"></div>
                     </div>
                     
                     <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
+                    
+                    ${sentimentHTML}
                 </div>
             `;
-        }
+    }
 
-        function sendFocus() {
-            document.getElementById('filter-text-val').focus();
-        }
+    function sendFocus() {
+      document.getElementById("filter-text-val").focus();
+    }
 
-        function filterText() {
-            const answerBox = document.getElementById("answer-box");
-            answerBox.innerHTML = '<div class="empty-state">Searching for results...</div>';
+    function filterText() {
+      const answerBox = document.getElementById("answer-box");
+      answerBox.innerHTML =
+        '<div class="empty-state">Searching for results...</div>';
 
-            const queryValue = document.getElementById("filter-text-val").value;
+      const queryValue = document.getElementById("filter-text-val").value;
 
-            if (!queryValue.trim()) {
-                answerBox.innerHTML = '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';
-                return;
-            }
+      if (!queryValue.trim()) {
+        answerBox.innerHTML =
+          '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';
+        return;
+      }
 
-            fetch("/query?" + new URLSearchParams({ query: queryValue }).toString())
-                .then(response => response.json())
-                .then(data => {
-                    answerBox.innerHTML = "";
+      fetch("/query?" + new URLSearchParams({ query: queryValue }).toString())
+        .then((response) => response.json())
+        .then((data) => {
+          answerBox.innerHTML = "";
 
-                    if (data.length === 0) {
-                        answerBox.innerHTML = '<div class="empty-state">No results found. Try different search terms.</div>';
-                        return;
-                    }
+          if (data.length === 0) {
+            answerBox.innerHTML =
+              '<div class="empty-state">No results found. Try different search terms.</div>';
+            return;
+          }
 
-                    data.slice(0, 10).forEach(stock => {
-                        let resultHTML = answerBoxTemplate(
-                            stock.name,
-                            stock.symbol,
-                            stock.score,
-                            stock.sector,
-                            stock.environmentScore,
-                            stock.socialScore,
-                            stock.governanceScore,
-                            stock.totalEsg,
-                            stock.overallRisk
-                        );
-                        let tempDiv = document.createElement("div");
-                        tempDiv.innerHTML = resultHTML;
-                        answerBox.appendChild(tempDiv.firstElementChild);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching query results:', error);
-                    answerBox.innerHTML = '<div class="empty-state">An error occurred while fetching results. Please try again.</div>';
-                });
-        }
+          data.slice(0, 10).forEach((stock) => {
+            let resultHTML = answerBoxTemplate(stock);
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = resultHTML;
+            answerBox.appendChild(tempDiv.firstElementChild);
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching query results:", error);
+          answerBox.innerHTML =
+            '<div class="empty-state">An error occurred while fetching results. Please try again.</div>';
+        });
+    }
 
-        document.getElementById("answer-box").innerHTML = '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';
-    </script>
+    document.getElementById("answer-box").innerHTML =
+      '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';
+  </script>
 </body>

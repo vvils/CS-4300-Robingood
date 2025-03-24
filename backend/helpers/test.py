@@ -1,9 +1,10 @@
-from backend.helpers.query_system import EthicalInvestmentQuerySystem, load_stock_data
+from query_system import EthicalInvestmentQuerySystem, load_stock_data
 import os
 import glob
 from flask import Flask
 
 # to run, run "python -m backend.helpers.test"
+
 
 def format_result(result, index, query_vector):
     """Format a single result with score calculation details"""
@@ -62,7 +63,7 @@ def main():
         stocks_data = load_stock_data(json_text)
         print(f"Successfully loaded data for {len(stocks_data)} stocks.")
 
-    query_system = EthicalInvestmentQuerySystem()
+    query_system = EthicalInvestmentQuerySystem(stocks_data)
 
     example_queries = [
         "Find stocks with low risk and high environmental scores",

@@ -215,6 +215,9 @@ class EthicalInvestmentQuerySystem:
         }
 
         self.normalized_data = self.normalize_stock_data(stocks_data)
+        self.original_stocks_map = {
+            stock['Symbol']: stock for stock in stocks_data if 'Symbol' in stock
+        }
 
         self.available_sectors = set()
         for stock in stocks_data:
@@ -363,6 +366,10 @@ class EthicalInvestmentQuerySystem:
                     if tokens[j] in self.reverse_modifiers:
                         modifier_value = self.reverse_modifiers[tokens[j]]
 
+                # if field_value == "overallRisk":
+                #     print("hi1")
+                #     print(modifier_value, intensifier_value)
+
                 if modifier_value == 0.0:
                     if field_match in ["environmental", "social", "governance", "esg"]:
                         modifier_value = 1.0
@@ -370,10 +377,19 @@ class EthicalInvestmentQuerySystem:
                         modifier_value = -1.0
                     else:
                         modifier_value = 1.0
+                
+                if field_match in ["risk", "controversy", "beta"]:
+                    if modifier_value != 0.0:
+                        modifier_value *= -1
+                    else:
+                        modifier_value = 1.0 # default to low risk
 
                 if negation_active:
                     modifier_value *= -1
                     negation_active = False
+
+                # if field_value == "overallRisk":
+                #     print(modifier_value, intensifier_value)
 
                 query_vector[field_value] = modifier_value * intensifier_value
 
@@ -400,12 +416,17 @@ class EthicalInvestmentQuerySystem:
                 return 0.0
 
         for field, weight in query_vector.items():
-            if (
-                field not in ["specified_sectors", "include_sentiment"]
-                and field in stock
-                and weight != 0.0
-            ):
-                score += weight * float(stock[field])
+            if field in ["specified_sectors", "include_sentiment"]:
+                continue
+            if field in stock and weight != 0.0:
+                if field in ["overallRisk", "highestControversy", "beta"]:
+                    if weight < 0:
+                        field_value = 1 - float(stock[field])
+                        score += abs(weight) * field_value
+                    else:
+                        score += weight * float(stock[field])
+                else:
+                    score += weight * float(stock[field])
                 total_weight += abs(weight)
 
         if total_weight > 0:
@@ -498,7 +519,7 @@ class EthicalInvestmentQuerySystem:
         else:
             return {"score": 0.0, "match_type": "no_match"}
 
-    def rank_stocks(self, stocks_data, query_text):
+    def rank_stocks(self, query_text):
         """
         Rank stocks based on how well they match the query with priority:
         1. ESG terms (highest)
@@ -529,8 +550,10 @@ class EthicalInvestmentQuerySystem:
                 match_type = result["match_type"]
 
             if score > 0:
+                stock_symbol = stock["Symbol"]
+                original_stock = self.original_stocks_map.get(stock_symbol, {})
                 result = {
-                    "symbol": stock["Symbol"],
+                    "symbol": stock_symbol,
                     "name": stock["Full Name"],
                     "score": score,
                     "sector": stock.get("GICS Sector", "Unknown"),
@@ -539,7 +562,7 @@ class EthicalInvestmentQuerySystem:
                     "socialScore": float(stock.get("socialScore", 0)),
                     "governanceScore": float(stock.get("governanceScore", 0)),
                     "totalEsg": float(stock.get("totalEsg", 0)),
-                    "overallRisk": int(float(stock.get("overallRisk", 0))),
+                    "overallRisk": int(float(original_stock.get("overallRisk", 0))),
                 }
 
                 ticker = stock["Symbol"]

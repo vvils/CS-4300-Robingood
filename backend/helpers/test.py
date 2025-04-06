@@ -20,7 +20,7 @@ def format_result(result, index, query_vector):
     return "\n".join(output)
 
 
-def run_query(query_system, stocks_data, query, top_n=10):
+def run_query(query_system, stocks_data, query, top_n=3):
     """Run a query and display the top N results with scoring details"""
     print(f"\n{'='*80}")
     print(f'QUERY: "{query}"')
@@ -38,7 +38,7 @@ def run_query(query_system, stocks_data, query, top_n=10):
             else:
                 print(f"  {field}: {weight}")
 
-    results = query_system.rank_stocks(stocks_data, query)
+    results = query_system.rank_stocks(query)
 
     if not results:
         print("\nNo matching stocks found for this query.")
@@ -61,12 +61,15 @@ def main():
     with open(json_file_path, "r") as file:
         json_text = file.read()
         stocks_data = load_stock_data(json_text)
-        print(f"Successfully loaded data for {len(stocks_data)} stocks.")
+        # print(f"Successfully loaded data for {len(stocks_data)} stocks.")
 
     query_system = EthicalInvestmentQuerySystem(stocks_data)
 
     example_queries = [
-        "Find stocks with low risk and high environmental scores",
+        # "Find stocks with low risk and high environmental scores",
+        # "High Governance",
+        "Low Risk",
+        "High Risk",
         # "Show me companies with excellent governance and social responsibility",
         # "I want to invest in companies that are environmentally friendly with minimal controversy",
         # "Which companies have the best overall ESG ratings?",

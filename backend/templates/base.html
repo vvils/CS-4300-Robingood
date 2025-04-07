@@ -2,10 +2,7 @@
 <title>{% block title %}{% endblock %} - Robingood</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   * {
     margin: 0;
@@ -294,6 +291,40 @@
     font-size: 0.85rem;
   }
 
+  /* Show More Button Styles */
+  .show-more-container {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .show-more-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+  }
+
+  .show-more-btn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .show-more-btn:disabled {
+    background-color: var(--border);
+    color: var(--text-light);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
   @media (max-width: 768px) {
     .top-bar {
       flex-direction: column;
@@ -324,15 +355,8 @@
       </div>
       <div class="search-container">
         <div class="input-box" onclick="sendFocus()">
-          <img
-            src="{{ url_for('static', filename='images/mag.png') }}"
-            alt="Search icon"
-          />
-          <input
-            placeholder="Search for stocks by ESG criteria"
-            id="filter-text-val"
-            onkeyup="filterText()"
-          />
+          <img src="{{ url_for('static', filename='images/mag.png') }}" alt="Search icon" />
+          <input placeholder="Try 'low risk tech with high social scores" id="filter-text-val" onkeyup="filterText()" />
         </div>
       </div>
     </div>
@@ -342,6 +366,10 @@
   </div>
 
   <script>
+    let allResults = [];
+    let currentPage = 0;
+    const resultsPerPage = 6;
+
     function getSentimentClass(description) {
       if (!description) return "";
 
@@ -395,9 +423,8 @@
             <div class="sentiment-section">
                 <h4>
                     Social Sentiment
-                    <span class="sentiment-badge ${sentimentClass}">${
-          sentiment.description
-        }</span>
+                    <span class="sentiment-badge ${sentimentClass}">${sentiment.description
+          }</span>
                 </h4>
                 
                 <div class="sentiment-summary">${sentiment.summary}</div>
@@ -405,30 +432,27 @@
                 <div class="sentiment-meters">
                     <div>
                         <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
-                          1
-                        )}%</span></p>
+            1
+          )}%</span></p>
                         <div class="meter">
-                            <div class="meter-fill meter-positive" style="width: ${
-                              sentiment.positive_percentage
-                            }%"></div>
+                            <div class="meter-fill meter-positive" style="width: ${sentiment.positive_percentage
+          }%"></div>
                         </div>
                     </div>
                     
                     <div>
                         <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
-                          1
-                        )}%</span></p>
+            1
+          )}%</span></p>
                         <div class="meter">
-                            <div class="meter-fill meter-negative" style="width: ${
-                              sentiment.negative_percentage
-                            }%"></div>
+                            <div class="meter-fill meter-negative" style="width: ${sentiment.negative_percentage
+          }%"></div>
                         </div>
                     </div>
                 </div>
                 
-                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${
-                  sentiment.total_tweets
-                } tweets</p>
+                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${sentiment.total_tweets
+          } tweets</p>
             </div>
         `;
       } else {
@@ -448,39 +472,39 @@
                     <p><span>Score</span> <span>${score.toFixed(3)}</span></p>
                     
                     <p><span>Environment</span> <span>${environmentScore.toFixed(
-                      2
-                    )}</span></p>
+        2
+      )}</span></p>
                     <div class="meter">
                         <div class="meter-fill meter-env" style="width: ${getScoreFill(
-                          environmentScore
-                        )}"></div>
+        environmentScore
+      )}"></div>
                     </div>
                     
                     <p><span>Social</span> <span>${socialScore.toFixed(
-                      2
-                    )}</span></p>
+        2
+      )}</span></p>
                     <div class="meter">
                         <div class="meter-fill meter-soc" style="width: ${getScoreFill(
-                          socialScore
-                        )}"></div>
+        socialScore
+      )}"></div>
                     </div>
                     
                     <p><span>Governance</span> <span>${governanceScore.toFixed(
-                      2
-                    )}</span></p>
+        2
+      )}</span></p>
                     <div class="meter">
                         <div class="meter-fill meter-gov" style="width: ${getScoreFill(
-                          governanceScore
-                        )}"></div>
+        governanceScore
+      )}"></div>
                     </div>
                     
                     <p><span>Total ESG</span> <span>${totalEsg.toFixed(
-                      2
-                    )}</span></p>
+        2
+      )}</span></p>
                     <div class="meter">
                         <div class="meter-fill meter-total" style="width: ${getScoreFill(
-                          totalEsg
-                        )}"></div>
+        totalEsg
+      )}"></div>
                     </div>
                     
                     <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
@@ -488,6 +512,51 @@
                     ${sentimentHTML}
                 </div>
             `;
+    }
+
+    function showMoreButton(hasMore) {
+      if (!hasMore) return '';
+
+      return `
+        <div class="show-more-container">
+          <button id="show-more-btn" class="show-more-btn" onclick="loadMoreResults()">
+            Show More Results
+          </button>
+        </div>
+      `;
+    }
+
+    function renderResults() {
+      const answerBox = document.getElementById("answer-box");
+      answerBox.innerHTML = "";
+
+      if (allResults.length === 0) {
+        answerBox.innerHTML = '<div class="empty-state">No results found. Try different search terms.</div>';
+        return;
+      }
+
+      const startIdx = 0;
+      const endIdx = Math.min((currentPage + 1) * resultsPerPage, allResults.length);
+      const hasMoreResults = endIdx < allResults.length;
+
+      for (let i = startIdx; i < endIdx; i++) {
+        const stock = allResults[i];
+        let resultHTML = answerBoxTemplate(stock);
+        let tempDiv = document.createElement("div");
+        tempDiv.innerHTML = resultHTML;
+        answerBox.appendChild(tempDiv.firstElementChild);
+      }
+
+      if (hasMoreResults) {
+        let tempDiv = document.createElement("div");
+        tempDiv.innerHTML = showMoreButton(hasMoreResults);
+        answerBox.appendChild(tempDiv.firstElementChild);
+      }
+    }
+
+    function loadMoreResults() {
+      currentPage++;
+      renderResults();
     }
 
     function sendFocus() {
@@ -507,23 +576,13 @@
         return;
       }
 
+      currentPage = 0;
+
       fetch("/query?" + new URLSearchParams({ query: queryValue }).toString())
         .then((response) => response.json())
         .then((data) => {
-          answerBox.innerHTML = "";
-
-          if (data.length === 0) {
-            answerBox.innerHTML =
-              '<div class="empty-state">No results found. Try different search terms.</div>';
-            return;
-          }
-
-          data.slice(0, 10).forEach((stock) => {
-            let resultHTML = answerBoxTemplate(stock);
-            let tempDiv = document.createElement("div");
-            tempDiv.innerHTML = resultHTML;
-            answerBox.appendChild(tempDiv.firstElementChild);
-          });
+          allResults = data;
+          renderResults();
         })
         .catch((error) => {
           console.error("Error fetching query results:", error);

@@ -43,7 +43,7 @@ CORS(app)
 @app.route("/query", methods=["GET"])
 def query_endpoint():
     user_query = request.args.get("query", default="", type=str)
-    results = query_system.rank_stocks_with_rocchio(user_query)[:10]
+    results = query_system.rank_stocks_with_rocchio(user_query)[:24]
     return jsonify(results)
 
 

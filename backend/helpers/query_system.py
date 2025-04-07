@@ -5,7 +5,7 @@ import math
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-
+import numpy as np
 
 class EthicalInvestmentQuerySystem:
     def __init__(self, stocks_data, sentiment_data=None):
@@ -217,6 +217,9 @@ class EthicalInvestmentQuerySystem:
         self.normalized_data = self.normalize_stock_data(stocks_data)
         self.original_stocks_map = {
             stock['Symbol']: stock for stock in stocks_data if 'Symbol' in stock
+        }
+        self.normalized_stocks_map = {
+            stock['Symbol']: stock for stock in self.normalized_data if 'Symbol' in stock
         }
 
         self.available_sectors = set()
@@ -519,6 +522,34 @@ class EthicalInvestmentQuerySystem:
         else:
             return {"score": 0.0, "match_type": "no_match"}
 
+    def _rocchio_update(self, original_query, relevant_stocks, nonrelevant_stocks, features, alpha=1.0, beta=0.75, gamma=0.15):
+        updated_query = {}
+
+        for feature in features:
+            orig_weight = original_query.get(feature, 0.0)
+
+            rel_centroid = 0.0
+            if relevant_stocks:
+                rel_values = [float(stock.get(feature, 0.5)) for stock in relevant_stocks]
+                if rel_values: 
+                    rel_centroid = np.mean(rel_values)
+
+            nonrel_centroid = 0.0
+            if nonrelevant_stocks:
+                nonrel_values = [float(stock.get(feature, 0.5)) for stock in nonrelevant_stocks]
+                if nonrel_values:
+                    nonrel_centroid = np.mean(nonrel_values)
+
+            # Rocchio update formula
+            updated_query[feature] = alpha * orig_weight + beta * rel_centroid - gamma * nonrel_centroid
+
+        # Carry over non-feature keys unchanged
+        for key, value in original_query.items():
+            if key not in features:
+                updated_query[key] = value
+
+        return updated_query
+
     def rank_stocks(self, query_text):
         """
         Rank stocks based on how well they match the query with priority:
@@ -526,7 +557,10 @@ class EthicalInvestmentQuerySystem:
         2. Sector names (middle)
         3. Stock names (lowest)
         """
-        query_vector = self.parse_query(query_text)
+        if isinstance(query_text, dict):
+            query_vector = query_text
+        else:
+            query_vector = self.parse_query(query_text)
 
         has_esg_keywords = False
         for field, weight in query_vector.items():
@@ -585,6 +619,46 @@ class EthicalInvestmentQuerySystem:
         scores.sort(key=lambda x: x["score"], reverse=True)
         return scores
 
+    def rank_stocks_with_rocchio(self, query_text, alpha=1.0, beta=0.75, gamma=0.15):
+        """
+        Ranks stocks using an initial ranking followed by Rocchio feedback.
+        """
+        initial_ranked_results = self.rank_stocks(query_text)
+
+        if not initial_ranked_results or len(initial_ranked_results) < 2:
+            # Not enough initial results for Rocchio feedback
+            return initial_ranked_results
+
+        original_query = self.parse_query(query_text)
+        feature_keys = [
+            k for k, v in original_query.items()
+            if k not in ["specified_sectors", "include_sentiment"] and isinstance(v, (int, float)) and v != 0.0
+        ]
+
+        if not feature_keys:
+            # No weighted numerical factors in the query for Rocchio feedback
+            return initial_ranked_results 
+
+        # Split initial results and get corresponding stock data
+        mid_index = len(initial_ranked_results) // 2
+        relevant_symbols = {res["symbol"] for res in initial_ranked_results[:mid_index]}
+        nonrelevant_symbols = {res["symbol"] for res in initial_ranked_results[mid_index:]}
+
+        relevant_stocks = [self.normalized_stocks_map[sym] for sym in relevant_symbols if sym in self.normalized_stocks_map]
+        nonrelevant_stocks = [self.normalized_stocks_map[sym] for sym in nonrelevant_symbols if sym in self.normalized_stocks_map]
+
+        # Update the query vector 
+        updated_query = self._rocchio_update(
+            original_query,
+            relevant_stocks,
+            nonrelevant_stocks,
+            feature_keys,
+            alpha=alpha,
+            beta=beta,
+            gamma=gamma
+        )
+
+        return self.rank_stocks(updated_query)
 
 def parse_json_file(file_path):
     """Parse a JSON file into a list of stock objects"""

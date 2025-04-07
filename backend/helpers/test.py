@@ -38,7 +38,7 @@ def run_query(query_system, stocks_data, query, top_n=3):
             else:
                 print(f"  {field}: {weight}")
 
-    results = query_system.rank_stocks(query)
+    results = query_system.rank_stocks_with_rocchio(query)
 
     if not results:
         print("\nNo matching stocks found for this query.")

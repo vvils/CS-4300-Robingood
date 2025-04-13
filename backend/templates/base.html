@@ -2,7 +2,10 @@
 <title>{% block title %}{% endblock %} - Robingood</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 <style>
   * {
     margin: 0;
@@ -113,6 +116,7 @@
     box-shadow: 0 2px 10px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 4px solid var(--primary);
+    cursor: pointer;
   }
 
   .result:hover {
@@ -325,6 +329,137 @@
     transform: none;
   }
 
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-content {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin: 0;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.2s ease;
+  }
+
+  .modal-close:hover {
+    color: var(--text-dark);
+  }
+
+  .modal-body {
+    margin-bottom: 1.5rem;
+  }
+
+  .score-explanation {
+    margin-bottom: 1.5rem;
+  }
+
+  .score-explanation h3 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .score-explanation h3 .score-value {
+    margin-left: 0.5rem;
+    font-weight: 600;
+  }
+
+  .score-explanation p {
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .score-tier {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 50px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .tier-excellent {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .tier-good {
+    background-color: #c8e6c9;
+    color: #388e3c;
+  }
+
+  .tier-average {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+
+  .tier-below-average {
+    background-color: #fff8e1;
+    color: #ffa000;
+  }
+
+  .tier-poor {
+    background-color: #ffebee;
+    color: #d32f2f;
+  }
+
   @media (max-width: 768px) {
     .top-bar {
       flex-direction: column;
@@ -355,8 +490,15 @@
       </div>
       <div class="search-container">
         <div class="input-box" onclick="sendFocus()">
-          <img src="{{ url_for('static', filename='images/mag.png') }}" alt="Search icon" />
-          <input placeholder="Try 'low risk tech with high social scores" id="filter-text-val" onkeyup="filterText()" />
+          <img
+            src="{{ url_for('static', filename='images/mag.png') }}"
+            alt="Search icon"
+          />
+          <input
+            placeholder="Try 'low risk tech with high social scores"
+            id="filter-text-val"
+            onkeyup="filterText()"
+          />
         </div>
       </div>
     </div>
@@ -365,10 +507,158 @@
     </div>
   </div>
 
+  <!-- ESG Score Modal -->
+  <div id="score-info-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-stock-name">Company Name ESG Scores</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="env-score-explanation" class="score-explanation"></div>
+        <div id="social-score-explanation" class="score-explanation"></div>
+        <div id="gov-score-explanation" class="score-explanation"></div>
+        <div id="total-score-explanation" class="score-explanation"></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     let allResults = [];
     let currentPage = 0;
     const resultsPerPage = 6;
+
+    // Score explanation maps - providing explanations for different score ranges
+    const scoreExplanations = {
+      environment: [
+        {
+          min: 0.8,
+          max: 1.0,
+          tier: "Excellent",
+          text: "Industry-leading environmental practices. The company demonstrates exceptional commitment to reducing their environmental footprint, invests significantly in renewable energy, has effective waste reduction programs, and likely has public commitments to carbon neutrality or similar advanced environmental goals.",
+        },
+        {
+          min: 0.6,
+          max: 0.79,
+          tier: "Good",
+          text: "Strong environmental policies in place. The company is taking substantial steps to minimize environmental impact, likely has targets for emissions reduction, and demonstrates above-average resource efficiency compared to industry peers.",
+        },
+        {
+          min: 0.4,
+          max: 0.59,
+          tier: "Average",
+          text: "Standard industry environmental practices. The company meets basic environmental compliance requirements and may have some improvement initiatives, but lacks the comprehensive approach of higher-scoring companies.",
+        },
+        {
+          min: 0.2,
+          max: 0.39,
+          tier: "Below Average",
+          text: "Limited environmental policies. The company shows minimal effort beyond basic compliance, may have had minor environmental incidents, and lacks robust plans for improving environmental performance.",
+        },
+        {
+          min: 0,
+          max: 0.19,
+          tier: "Poor",
+          text: "Significant environmental concerns. The company may have a history of environmental violations, lacks transparency on environmental impacts, or operates in ways that cause notable environmental harm without adequate mitigation strategies.",
+        },
+      ],
+      social: [
+        {
+          min: 0.8,
+          max: 1.0,
+          tier: "Excellent",
+          text: "Exemplary social responsibility. The company demonstrates exceptional commitment to employee welfare, diversity and inclusion, community engagement, and human rights throughout its supply chain. They likely publish comprehensive reports on their social impact and have industry-leading policies.",
+        },
+        {
+          min: 0.6,
+          max: 0.79,
+          tier: "Good",
+          text: "Strong social performance. The company has well-developed policies for employee benefits and development, maintains diverse hiring practices, engages positively with communities, and monitors their supply chain for social compliance.",
+        },
+        {
+          min: 0.4,
+          max: 0.59,
+          tier: "Average",
+          text: "Standard social practices. The company meets basic expectations for workplace conditions and community relations but may not have exceptional programs or transparency in all social dimensions.",
+        },
+        {
+          min: 0.2,
+          max: 0.39,
+          tier: "Below Average",
+          text: "Underdeveloped social policies. The company shows limited commitment to employee development, diversity, or community engagement, and may have had issues with labor relations or supply chain oversight.",
+        },
+        {
+          min: 0,
+          max: 0.19,
+          tier: "Poor",
+          text: "Concerning social practices. The company may have a history of labor disputes, lack of diversity, poor working conditions, or inadequate responses to community concerns. Significant improvement is needed in their approach to social responsibility.",
+        },
+      ],
+      governance: [
+        {
+          min: 0.8,
+          max: 1.0,
+          tier: "Excellent",
+          text: "Exceptional corporate governance. The company has a highly diverse and independent board, industry-leading transparency and accountability measures, strong ethical standards, and robust policies to prevent corruption and ensure compliance.",
+        },
+        {
+          min: 0.6,
+          max: 0.79,
+          tier: "Good",
+          text: "Strong governance structure. The company demonstrates above-average board independence, transparency in reporting, clear executive compensation policies tied to performance, and effective risk management systems.",
+        },
+        {
+          min: 0.4,
+          max: 0.59,
+          tier: "Average",
+          text: "Standard governance practices. The company meets basic expectations for board structure, financial disclosure, and compliance, but may lack the rigor or independence seen in higher-scoring companies.",
+        },
+        {
+          min: 0.2,
+          max: 0.39,
+          tier: "Below Average",
+          text: "Governance weaknesses present. The company shows limitations in board independence, transparency, executive compensation practices, or shareholder rights that could pose risks to investors.",
+        },
+        {
+          min: 0,
+          max: 0.19,
+          tier: "Poor",
+          text: "Significant governance concerns. The company may have a history of governance failures, conflicts of interest, excessive executive compensation not aligned with performance, or inadequate disclosure practices that raise serious questions about oversight and accountability.",
+        },
+      ],
+      total: [
+        {
+          min: 0.8,
+          max: 1.0,
+          tier: "Excellent",
+          text: "Top-tier ESG performer. The company demonstrates leadership across environmental, social, and governance dimensions, making it one of the most sustainable investments in its industry. These companies often set the standard for ESG practices that others aspire to achieve.",
+        },
+        {
+          min: 0.6,
+          max: 0.79,
+          tier: "Good",
+          text: "Strong overall sustainability profile. The company performs well across most ESG criteria, showing a serious commitment to sustainable business practices. While there may be room for improvement in some areas, the overall approach to ESG is comprehensive and effective.",
+        },
+        {
+          min: 0.4,
+          max: 0.59,
+          tier: "Average",
+          text: "Moderate ESG performance. The company meets basic standards across environmental, social, and governance dimensions but hasn't distinguished itself as a leader. There are both strengths and weaknesses in their ESG profile.",
+        },
+        {
+          min: 0.2,
+          max: 0.39,
+          tier: "Below Average",
+          text: "Lagging in ESG implementation. The company shows significant weaknesses in multiple ESG areas that could pose material risks. Substantial improvements are needed to reach industry-standard practices.",
+        },
+        {
+          min: 0,
+          max: 0.19,
+          tier: "Poor",
+          text: "Serious ESG concerns. The company demonstrates inadequate attention to critical ESG factors that likely pose material risks to its business and investors. Immediate and comprehensive improvements are needed across environmental, social, and governance dimensions.",
+        },
+      ],
+    };
 
     function getSentimentClass(description) {
       if (!description) return "";
@@ -397,6 +687,128 @@
       return Math.min(100, Math.max(0, score * 100)) + "%";
     }
 
+    // Function to get the appropriate tier and explanation based on a score
+    function getScoreExplanation(type, score) {
+      const explanations = scoreExplanations[type];
+      for (const item of explanations) {
+        if (score >= item.min && score <= item.max) {
+          return item;
+        }
+      }
+      return { tier: "N/A", text: "No data available" };
+    }
+
+    // Function to get the tier class based on the tier name
+    function getTierClass(tier) {
+      tier = tier.toLowerCase();
+      if (tier === "excellent") return "tier-excellent";
+      if (tier === "good") return "tier-good";
+      if (tier === "average") return "tier-average";
+      if (tier === "below average") return "tier-below-average";
+      if (tier === "poor") return "tier-poor";
+      return "";
+    }
+
+    // Function to open the modal with the appropriate stock data
+    function openScoreInfoModal(stock) {
+      // Set the modal title
+      document.getElementById(
+        "modal-stock-name"
+      ).textContent = `${stock.name} (${stock.symbol}) ESG Scores`;
+
+      // Environment score
+      const envExplanation = getScoreExplanation(
+        "environment",
+        stock.environmentScore
+      );
+      document.getElementById("env-score-explanation").innerHTML = `
+        <h3>
+          Environmental Score
+          <span class="score-value">${stock.environmentScore.toFixed(2)}</span>
+          <span class="score-tier ${getTierClass(envExplanation.tier)}">${
+        envExplanation.tier
+      }</span>
+        </h3>
+        <p>${envExplanation.text}</p>
+      `;
+
+      // Social score
+      const socialExplanation = getScoreExplanation(
+        "social",
+        stock.socialScore
+      );
+      document.getElementById("social-score-explanation").innerHTML = `
+        <h3>
+          Social Score
+          <span class="score-value">${stock.socialScore.toFixed(2)}</span>
+          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${
+        socialExplanation.tier
+      }</span>
+        </h3>
+        <p>${socialExplanation.text}</p>
+      `;
+
+      // Governance score
+      const govExplanation = getScoreExplanation(
+        "governance",
+        stock.governanceScore
+      );
+      document.getElementById("gov-score-explanation").innerHTML = `
+        <h3>
+          Governance Score
+          <span class="score-value">${stock.governanceScore.toFixed(2)}</span>
+          <span class="score-tier ${getTierClass(govExplanation.tier)}">${
+        govExplanation.tier
+      }</span>
+        </h3>
+        <p>${govExplanation.text}</p>
+      `;
+
+      // Total ESG score
+      const totalExplanation = getScoreExplanation("total", stock.totalEsg);
+      document.getElementById("total-score-explanation").innerHTML = `
+        <h3>
+          Total ESG Score
+          <span class="score-value">${stock.totalEsg.toFixed(2)}</span>
+          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${
+        totalExplanation.tier
+      }</span>
+        </h3>
+        <p>${totalExplanation.text}</p>
+      `;
+
+      // Show the modal
+      const modal = document.getElementById("score-info-modal");
+      document.body.style.overflow = "hidden"; // Prevent scrolling while modal is open
+      modal.classList.add("active");
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      const modal = document.getElementById("score-info-modal");
+      modal.classList.remove("active");
+      document.body.style.overflow = ""; // Restore scrolling
+    }
+
+    // Initialize modal listeners when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("score-info-modal");
+
+      // Close modal when clicking on the overlay (outside the modal content)
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    });
+
     function answerBoxTemplate(stock) {
       const {
         name,
@@ -423,8 +835,9 @@
             <div class="sentiment-section">
                 <h4>
                     Social Sentiment
-                    <span class="sentiment-badge ${sentimentClass}">${sentiment.description
-          }</span>
+                    <span class="sentiment-badge ${sentimentClass}">${
+          sentiment.description
+        }</span>
                 </h4>
                 
                 <div class="sentiment-summary">${sentiment.summary}</div>
@@ -432,27 +845,30 @@
                 <div class="sentiment-meters">
                     <div>
                         <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
-            1
-          )}%</span></p>
+                          1
+                        )}%</span></p>
                         <div class="meter">
-                            <div class="meter-fill meter-positive" style="width: ${sentiment.positive_percentage
-          }%"></div>
+                            <div class="meter-fill meter-positive" style="width: ${
+                              sentiment.positive_percentage
+                            }%"></div>
                         </div>
                     </div>
                     
                     <div>
                         <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
-            1
-          )}%</span></p>
+                          1
+                        )}%</span></p>
                         <div class="meter">
-                            <div class="meter-fill meter-negative" style="width: ${sentiment.negative_percentage
-          }%"></div>
+                            <div class="meter-fill meter-negative" style="width: ${
+                              sentiment.negative_percentage
+                            }%"></div>
                         </div>
                     </div>
                 </div>
                 
-                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${sentiment.total_tweets
-          } tweets</p>
+                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${
+                  sentiment.total_tweets
+                } tweets</p>
             </div>
         `;
       } else {
@@ -464,58 +880,57 @@
         `;
       }
 
+      // Store stock data as a JSON string with escaped quotes to pass to the click handler
+      const stockData = JSON.stringify(stock).replace(/"/g, "&quot;");
+
       return `
-                <div class="result">
-                    <h3>${name} <small>${symbol}</small></h3>
-                    
-                    <p><span>Sector</span> <span>${sector}</span></p>
-                    <p><span>Score</span> <span>${score.toFixed(3)}</span></p>
-                    
-                    <p><span>Environment</span> <span>${environmentScore.toFixed(
-        2
-      )}</span></p>
-                    <div class="meter">
-                        <div class="meter-fill meter-env" style="width: ${getScoreFill(
-        environmentScore
-      )}"></div>
-                    </div>
-                    
-                    <p><span>Social</span> <span>${socialScore.toFixed(
-        2
-      )}</span></p>
-                    <div class="meter">
-                        <div class="meter-fill meter-soc" style="width: ${getScoreFill(
-        socialScore
-      )}"></div>
-                    </div>
-                    
-                    <p><span>Governance</span> <span>${governanceScore.toFixed(
-        2
-      )}</span></p>
-                    <div class="meter">
-                        <div class="meter-fill meter-gov" style="width: ${getScoreFill(
-        governanceScore
-      )}"></div>
-                    </div>
-                    
-                    <p><span>Total ESG</span> <span>${totalEsg.toFixed(
-        2
-      )}</span></p>
-                    <div class="meter">
-                        <div class="meter-fill meter-total" style="width: ${getScoreFill(
-        totalEsg
-      )}"></div>
-                    </div>
-                    
-                    <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
-                    
-                    ${sentimentHTML}
-                </div>
-            `;
+        <div class="result" onclick="openScoreInfoModal(${stockData})">
+            <h3>${name} <small>${symbol}</small></h3>
+            
+            <p><span>Sector</span> <span>${sector}</span></p>
+            <p><span>Score</span> <span>${score.toFixed(3)}</span></p>
+            
+            <p><span>Environment</span> <span>${environmentScore.toFixed(
+              2
+            )}</span></p>
+            <div class="meter">
+                <div class="meter-fill meter-env" style="width: ${getScoreFill(
+                  environmentScore
+                )}"></div>
+            </div>
+            
+            <p><span>Social</span> <span>${socialScore.toFixed(2)}</span></p>
+            <div class="meter">
+                <div class="meter-fill meter-soc" style="width: ${getScoreFill(
+                  socialScore
+                )}"></div>
+            </div>
+            
+            <p><span>Governance</span> <span>${governanceScore.toFixed(
+              2
+            )}</span></p>
+            <div class="meter">
+                <div class="meter-fill meter-gov" style="width: ${getScoreFill(
+                  governanceScore
+                )}"></div>
+            </div>
+            
+            <p><span>Total ESG</span> <span>${totalEsg.toFixed(2)}</span></p>
+            <div class="meter">
+                <div class="meter-fill meter-total" style="width: ${getScoreFill(
+                  totalEsg
+                )}"></div>
+            </div>
+            
+            <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
+            
+            ${sentimentHTML}
+        </div>
+      `;
     }
 
     function showMoreButton(hasMore) {
-      if (!hasMore) return '';
+      if (!hasMore) return "";
 
       return `
         <div class="show-more-container">
@@ -531,12 +946,16 @@
       answerBox.innerHTML = "";
 
       if (allResults.length === 0) {
-        answerBox.innerHTML = '<div class="empty-state">No results found. Try different search terms.</div>';
+        answerBox.innerHTML =
+          '<div class="empty-state">No results found. Try different search terms.</div>';
         return;
       }
 
       const startIdx = 0;
-      const endIdx = Math.min((currentPage + 1) * resultsPerPage, allResults.length);
+      const endIdx = Math.min(
+        (currentPage + 1) * resultsPerPage,
+        allResults.length
+      );
       const hasMoreResults = endIdx < allResults.length;
 
       for (let i = startIdx; i < endIdx; i++) {

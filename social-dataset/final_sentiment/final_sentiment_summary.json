@@ -1,0 +1,5032 @@
+[
+  {
+    "ticker": "A",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AAPL",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ABBV",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ABNB",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ABT",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ACGL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ACN",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ADBE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ADI",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ADM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ADP",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ADSK",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AEE",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AEP",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AES",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AFL",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AIG",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AIZ",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AJG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AKAM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ALB",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ALGN",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ALL",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ALLE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMAT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMCR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMD",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 45.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AME",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMGN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMT",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AMZN",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ANET",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ANSS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AON",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AOS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "APA",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "APD",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "APH",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "APO",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "APTV",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ARE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ATO",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AVB",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AVGO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AVY",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AWK",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AXON",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AXP",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "AZO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BA",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BAC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BALL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BAX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BBY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BDX",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BEN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BF-B",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 50.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BG",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BIIB",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BK",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BKNG",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BKR",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BLDR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BLK",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BMY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BRK-B",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BRO",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BSX",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BXP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "C",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CAG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CAH",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CARR",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CAT",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CB",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CBOE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CBRE",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CCI",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CCL",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CDNS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CDW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CEG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CF",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CFG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CHD",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CHRW",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CHTR",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CINF",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CLX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CMCSA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CME",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CMG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CMI",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CMS",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CNC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CNP",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "COF",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "COO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "COP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "COR",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "COST",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CPAY",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CPB",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CPRT",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CPT",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CRL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CRM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CRWD",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CSCO",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CSGP",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CSX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CTAS",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CTRA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CTSH",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CTVA",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CVS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CVX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CZR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "D",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DAL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DASH",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DAY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DD",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DECK",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DELL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DFS",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DGX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DHI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 55.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 45.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DHR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DIS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DLR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DLTR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DOC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DOV",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DOW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DPZ",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DRI",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DTE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DUK",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DVA",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DVN",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "DXCM",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EA",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EBAY",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ECL",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ED",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EFX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EG",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EIX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ELV",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EMN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EMR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ENPH",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EOG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EPAM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EQIX",
+    "sentiment": {
+      "positive_percentage": 5.3,
+      "negative_percentage": 5.3,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 89.5,
+      "total_news": 19
+    }
+  },
+  {
+    "ticker": "EQR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EQT",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ERIE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ES",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ESS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ETN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ETR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EVRG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EW",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EXC",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EXE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EXPD",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EXPE",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "EXR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "F",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 45.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FANG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FAST",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FCX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FDS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FDX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FFIV",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FI",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FICO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FIS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FITB",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FOX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FOXA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FRT",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FSLR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FTNT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FTV",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GD",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GDDY",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GEHC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GEN",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GEV",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GILD",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GIS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GL",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GLW",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GNRC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GOOG",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GOOGL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GPC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GPN",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GRMN",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "GWW",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HAL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HAS",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HBAN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HCA",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HD",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HES",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HIG",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HII",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HLT",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HOLX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HON",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HPE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HPQ",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HRL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HSIC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HST",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HSY",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 20.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HUBB",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HUM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "HWM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IBM",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ICE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IDXX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IEX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IFF",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "INCY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 50.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "INTC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "INTU",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "INVH",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IP",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IPG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IQV",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IRM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ISRG",
+    "sentiment": {
+      "positive_percentage": 35.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ITW",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "IVZ",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "J",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JBHT",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JBL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JCI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JKHY",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JNJ",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JNPR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "JPM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "K",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KDP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KEY",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KEYS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KHC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KIM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KKR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KLAC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KMB",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KMI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KMX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KO",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 15.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KR",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "KVUE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "L",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LDOS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LEN",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LH",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LHX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LII",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 15.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LIN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LKQ",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LLY",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LMT",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LNT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LOW",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LRCX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LULU",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LUV",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LVS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LYB",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "LYV",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MAA",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MAR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MAS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MCD",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MCHP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MCK",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MCO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MDLZ",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MDT",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MET",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "META",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MGM",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MHK",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MKC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MKTX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MLM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MMC",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MMM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MNST",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MO",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MOH",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MOS",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MPC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MPWR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MRK",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MRNA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MS",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MSCI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MSFT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MSI",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MTB",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MTCH",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MTD",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "MU",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NCLH",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NDAQ",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NDSN",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NEE",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 15.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NEM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NFLX",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NI",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NKE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NOC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NOW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NRG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NSC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NTAP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NTRS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NUE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NVDA",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 45.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NVR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NWS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NWSA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "NXPI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "O",
+    "sentiment": {
+      "positive_percentage": 35.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 50.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ODFL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "OKE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "OMC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ON",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ORCL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ORLY",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "OTIS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "OXY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PANW",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PARA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PAYC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PAYX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PCAR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PCG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PEG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PEP",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PFE",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 50.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PFG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PGR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PH",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 15.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PHM",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PKG",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PLD",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PLTR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PM",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PNC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PNR",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PNW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PODD",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "POOL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PPG",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PPL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PRU",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PSA",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PSX",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PTC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PWR",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "PYPL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "QCOM",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RCL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "REG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "REGN",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RF",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RJF",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RL",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 50.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RMD",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ROK",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ROL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ROP",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ROST",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RSG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RTX",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "RVTY",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SBAC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SBUX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SCHW",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SHW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SJM",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SLB",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SMCI",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SNA",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SNPS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SO",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SOLV",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SPG",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SPGI",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SRE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "STE",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "STLD",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "STT",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "STX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "STZ",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SW",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SWK",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SWKS",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SYF",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SYK",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "SYY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 100.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "T",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 15.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TAP",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TDG",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TDY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TECH",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TEL",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TER",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TFC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TGT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TJX",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TKO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TMO",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TMUS",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TPL",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TPR",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TRGP",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TRMB",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TROW",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TRV",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TSCO",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TSLA",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TSN",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TT",
+    "sentiment": {
+      "positive_percentage": 21.1,
+      "negative_percentage": 5.3,
+      "mixed_percentage": 5.3,
+      "neutral_percentage": 68.4,
+      "total_news": 19
+    }
+  },
+  {
+    "ticker": "TTWO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TXN",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TXT",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TYL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UAL",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UBER",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UDR",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UHS",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ULTA",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UNH",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UNP",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "UPS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "URI",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "USB",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "V",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VICI",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VLO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VLTO",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VMC",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VRSK",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VRSN",
+    "sentiment": {
+      "positive_percentage": 25.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VRTX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VST",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 95.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VTR",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VTRS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "VZ",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WAB",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 40.0,
+      "mixed_percentage": 15.0,
+      "neutral_percentage": 40.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WAT",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 35.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 55.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WBA",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WBD",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WDAY",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WDC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WEC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WELL",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WFC",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WMB",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WMT",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WRB",
+    "sentiment": {
+      "positive_percentage": 20.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WSM",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WST",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WTW",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 10.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WY",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "WYNN",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "XEL",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "XOM",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "XYL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "YUM",
+    "sentiment": {
+      "positive_percentage": 15.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ZBH",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ZBRA",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "ZTS",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 60.0,
+      "total_news": 20
+    }
+  }
+]

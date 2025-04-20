@@ -583,35 +583,27 @@ class EthicalInvestmentQuerySystem:
         scores.sort(key=lambda x: x["score"], reverse=True)
         return scores
 
-    def rank_stocks_with_rocchio(self, query_text, alpha=1.0, beta=0.75, gamma=0.15):
+    def refine_results_with_feedback(self, original_query_text, relevant_symbols, nonrelevant_symbols, alpha=1.0, beta=0.75, gamma=0.15):
         """
-        Ranks stocks using an initial ranking followed by Rocchio feedback.
+        Re-ranks stocks using user feedback (upvoted/downvoted symbols) via Rocchio.
         """
-        initial_ranked_results = self.rank_stocks(query_text)
+        if not relevant_symbols:
+            return self.rank_stocks(original_query_text)
 
-        if not initial_ranked_results or len(initial_ranked_results) < 2:
-            # Not enough initial results for Rocchio feedback
-            return initial_ranked_results
-
-        original_query = self.parse_query(query_text)
+        original_query = self.parse_query(original_query_text)
         feature_keys = [
             k for k, v in original_query.items()
-            if k not in ["specified_sectors", "include_sentiment"] and isinstance(v, (int, float)) and v != 0.0
+            if k not in ["specified_sectors", "include_sentiment"] and isinstance(v, (int, float)) 
         ]
 
         if not feature_keys:
-            # No weighted numerical factors in the query for Rocchio feedback
-            return initial_ranked_results 
+            return self.rank_stocks(original_query_text)
 
-        # Split initial results and get corresponding stock data
-        mid_index = len(initial_ranked_results) // 2
-        relevant_symbols = {res["symbol"] for res in initial_ranked_results[:mid_index]}
-        nonrelevant_symbols = {res["symbol"] for res in initial_ranked_results[mid_index:]}
-
+        # Get normalized stock data based on user feedback
         relevant_stocks = [self.normalized_stocks_map[sym] for sym in relevant_symbols if sym in self.normalized_stocks_map]
         nonrelevant_stocks = [self.normalized_stocks_map[sym] for sym in nonrelevant_symbols if sym in self.normalized_stocks_map]
 
-        # Update the query vector 
+        # Update the query vector using Rocchio
         updated_query = self._rocchio_update(
             original_query,
             relevant_stocks,

@@ -39,13 +39,27 @@ query_system = EthicalInvestmentQuerySystem(stocks_data, sentiment_data)
 app = Flask(__name__)
 CORS(app)
 
+MAX_RESULTS = 12
 
 @app.route("/query", methods=["GET"])
 def query_endpoint():
     user_query = request.args.get("query", default="", type=str)
-    results = query_system.rank_stocks_with_rocchio(user_query)[:24]
+    # Call rank_stocks for the initial, unrefined results
+    results = query_system.rank_stocks(user_query)[:MAX_RESULTS]
     return jsonify(results)
 
+@app.route("/refine", methods=["POST"])
+def refine_endpoint():
+    """Handles user feedback to refine search results using Rocchio"""
+    data = request.get_json()
+
+    original_query = data.get("original_query")
+    relevant_symbols = data.get("relevant_symbols", []) 
+    displayed_symbols = data.get("displayed_symbols", [])
+    nonrelevant_symbols = list(set(displayed_symbols) - set(relevant_symbols))
+
+    refined_results = query_system.refine_results_with_feedback(original_query, relevant_symbols, nonrelevant_symbols)[:MAX_RESULTS] 
+    return jsonify(refined_results)
 
 @app.route("/")
 def home():

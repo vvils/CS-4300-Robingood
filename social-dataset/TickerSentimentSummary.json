@@ -1,0 +1,78 @@
+{
+  "SPCE": {
+    "Positive_Percentage": 73.68,
+    "Negative_Percentage": 26.32
+  },
+  "AMC": {
+    "Positive_Percentage": 100.0,
+    "Negative_Percentage": 0.0
+  },
+  "TSLA": {
+    "Positive_Percentage": 100.0,
+    "Negative_Percentage": 0.0
+  },
+  "NOK": {
+    "Positive_Percentage": 85.25,
+    "Negative_Percentage": 14.75
+  },
+  "PLTR": {
+    "Positive_Percentage": 79.17,
+    "Negative_Percentage": 20.83
+  },
+  "CLOV": {
+    "Positive_Percentage": 69.14,
+    "Negative_Percentage": 30.86
+  },
+  "BB": {
+    "Positive_Percentage": 89.09,
+    "Negative_Percentage": 10.91
+  },
+  "ZM": {
+    "Positive_Percentage": 65.91,
+    "Negative_Percentage": 34.09
+  },
+  "BABA": {
+    "Positive_Percentage": 69.81,
+    "Negative_Percentage": 30.19
+  },
+  "SQ": {
+    "Positive_Percentage": 87.18,
+    "Negative_Percentage": 12.82
+  },
+  "SHOP": {
+    "Positive_Percentage": 100.0,
+    "Negative_Percentage": 0.0
+  },
+  "BBBY": {
+    "Positive_Percentage": 66.67,
+    "Negative_Percentage": 33.33
+  },
+  "TLRY": {
+    "Positive_Percentage": 88.46,
+    "Negative_Percentage": 11.54
+  },
+  "PFE": {
+    "Positive_Percentage": 83.33,
+    "Negative_Percentage": 16.67
+  },
+  "VIAC": {
+    "Positive_Percentage": 57.14,
+    "Negative_Percentage": 42.86
+  },
+  "GME": {
+    "Positive_Percentage": 100.0,
+    "Negative_Percentage": 0.0
+  },
+  "SOFI": {
+    "Positive_Percentage": 57.14,
+    "Negative_Percentage": 42.86
+  },
+  "XOM": {
+    "Positive_Percentage": 100.0,
+    "Negative_Percentage": 0.0
+  },
+  "CRSR": {
+    "Positive_Percentage": 100.0,
+    "Negative_Percentage": 0.0
+  }
+}

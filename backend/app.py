@@ -54,11 +54,17 @@ def refine_endpoint():
     data = request.get_json()
 
     original_query = data.get("original_query")
+    # print(original_query)
     relevant_symbols = data.get("relevant_symbols", []) 
+    # print(f"Relevant symbols: {relevant_symbols}")
     displayed_symbols = data.get("displayed_symbols", [])
+    # print(f"Displayed symbols: {displayed_symbols}")
     nonrelevant_symbols = list(set(displayed_symbols) - set(relevant_symbols))
 
     refined_results = query_system.refine_results_with_feedback(original_query, relevant_symbols, nonrelevant_symbols)[:MAX_RESULTS] 
+    # for stock in refined_results:
+    #     stock["symbol"] = stock["symbol"].upper()
+    #     print(stock["symbol"])
     return jsonify(refined_results)
 
 @app.route("/")

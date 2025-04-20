@@ -457,7 +457,7 @@
     color: #d32f2f;
   }
 
-  
+
 
   @media (max-width: 768px) {
     .top-bar {
@@ -511,7 +511,6 @@
   .refine-btn:hover {
     background: #125ea9;
   }
-
 </style>
 
 <body>
@@ -1143,15 +1142,18 @@
           return res.json();
         })
         .then((data) => {
-          alert("Refinement submitted successfully!");
-          console.log(data);
+          allResults = data;
+          currentPage = 0;
+          relevantSymbols.clear();
+          renderResults();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         })
         .catch((err) => {
           console.error("Refine failed:", err);
           alert("Failed to refine. Please try again.");
         });
     }
-    
+
 
     document.getElementById("answer-box").innerHTML =
       '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';

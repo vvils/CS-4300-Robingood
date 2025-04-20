@@ -2,7 +2,10 @@
 <title>{% block title %}{% endblock %} - Robingood</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 <style>
   * {
     margin: 0;
@@ -268,6 +271,15 @@
     background-color: #f44336;
   }
 
+  /* New added styles for mixed and neutral sentiment */
+  .meter-mixed {
+    background-color: #9c27b0; /* Purple for mixed sentiment */
+  }
+
+  .meter-neutral {
+    background-color: #607d8b; /* Blue-grey for neutral sentiment */
+  }
+
   .sentiment-summary {
     font-size: 0.85rem;
     margin: 0.5rem 0;
@@ -275,15 +287,23 @@
     color: var(--text-light);
   }
 
+  /* Updated sentiment meters to show all 4 categories */
   .sentiment-meters {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
     margin: 0.5rem 0;
   }
 
   .sentiment-meters p {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+  }
+
+  .sentiment-data {
+    margin-bottom: 0.8rem;
   }
 
   .no-data {
@@ -521,7 +541,6 @@
     border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
   }
 
-
   @media (max-width: 768px) {
     .top-bar {
       flex-direction: column;
@@ -569,9 +588,15 @@
       </div>
       <div class="search-container">
         <div class="input-box" onclick="sendFocus()">
-          <img src="{{ url_for('static', filename='images/mag.png') }}" alt="Search icon" />
-          <input placeholder="Try 'low risk tech with high social scores' " id="filter-text-val"
-            onkeyup="filterText()" />
+          <img
+            src="{{ url_for('static', filename='images/mag.png') }}"
+            alt="Search icon"
+          />
+          <input
+            placeholder="Try 'low risk tech with high social scores' "
+            id="filter-text-val"
+            onkeyup="filterText()"
+          />
         </div>
       </div>
     </div>
@@ -763,7 +788,7 @@
           tier: "Very High",
           text: "Severe governance deficiencies with entrenched management, poor oversight mechanisms, and anti-takeover provisions. These companies typically show elevated risk of shareholder disputes and regulatory scrutiny.",
         },
-      ]
+      ],
     };
 
     function getSentimentClass(description) {
@@ -845,8 +870,9 @@
         <h3>
           Environmental Score
           <span class="score-value">${stock.environmentScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(envExplanation.tier)}">${envExplanation.tier
-        }</span>
+          <span class="score-tier ${getTierClass(envExplanation.tier)}">${
+        envExplanation.tier
+      }</span>
         </h3>
         <p>${envExplanation.text}</p>
       `;
@@ -860,8 +886,9 @@
         <h3>
           Social Score
           <span class="score-value">${stock.socialScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${socialExplanation.tier
-        }</span>
+          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${
+        socialExplanation.tier
+      }</span>
         </h3>
         <p>${socialExplanation.text}</p>
       `;
@@ -875,8 +902,9 @@
         <h3>
           Governance Score
           <span class="score-value">${stock.governanceScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(govExplanation.tier)}">${govExplanation.tier
-        }</span>
+          <span class="score-tier ${getTierClass(govExplanation.tier)}">${
+        govExplanation.tier
+      }</span>
         </h3>
         <p>${govExplanation.text}</p>
       `;
@@ -887,8 +915,9 @@
         <h3>
           Total ESG Score
           <span class="score-value">${stock.totalEsg.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${totalExplanation.tier
-        }</span>
+          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${
+        totalExplanation.tier
+      }</span>
         </h3>
         <p>${totalExplanation.text}</p>
       `;
@@ -898,8 +927,12 @@
       document.getElementById("risk-score-explanation").innerHTML = `
         <h3>
           Overall Risk Score
-          <span class="score-value">${stock.overallRisk}</span> <!-- Display integer -->
-          <span class="score-tier ${getTierClass(riskExplanation.tier)}">${riskExplanation.tier}</span>
+          <span class="score-value">${
+            stock.overallRisk
+          }</span> <!-- Display integer -->
+          <span class="score-tier ${getTierClass(riskExplanation.tier)}">${
+        riskExplanation.tier
+      }</span>
         </h3>
         <p>${riskExplanation.text}</p>
       `;
@@ -936,6 +969,8 @@
       });
     });
 
+    // Replace the sentimentHTML section in your answerBoxTemplate function
+
     function answerBoxTemplate(stock) {
       const {
         name,
@@ -958,57 +993,99 @@
         ? `<button onclick="markRelevant(event, '${symbol}')" class="thumbs-up-btn clicked">✅<span class="tooltip">Mark Not Relevant</span></button>`
         : `<button onclick="markRelevant(event, '${symbol}')" class="thumbs-up-btn">👍<span class="tooltip">Mark Relevant</span></button>`;
 
-
-      // Create sentiment HTML
+      // Create sentiment HTML for the NEW data format
       let sentimentHTML = "";
 
       if (sentiment) {
-        const sentimentClass = getSentimentClass(sentiment.description);
+        // Get sentiment description based on positive/negative ratio
+        let description;
+        const positive = sentiment.positive_percentage;
+        const negative = sentiment.negative_percentage;
+
+        if (positive - negative > 15) {
+          description = "strongly positive";
+        } else if (positive > negative) {
+          description = "positive";
+        } else if (negative - positive > 15) {
+          description = "strongly negative";
+        } else if (negative > positive) {
+          description = "negative";
+        } else {
+          description = "neutral";
+        }
+
+        const sentimentClass = getSentimentClass(description);
+
+        // Create summary
+        const summary = `Analysis of news sentiment shows ${positive}% positive, ${negative}% negative, ${sentiment.mixed_percentage}% mixed, and ${sentiment.neutral_percentage}% neutral coverage.`;
 
         sentimentHTML = `
-            <div class="sentiment-section">
-                <h4>
-                    Social Sentiment
-                    <span class="sentiment-badge ${sentimentClass}">${sentiment.description
-          }</span>
-                </h4>
-                
-                <div class="sentiment-summary">${sentiment.summary}</div>
-                
-                <div class="sentiment-meters">
-                    <div>
-                        <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
-            1
-          )}%</span></p>
-                        <div class="meter">
-                            <div class="meter-fill meter-positive" style="width: ${sentiment.positive_percentage
-          }%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
-            1
-          )}%</span></p>
-                        <div class="meter">
-                            <div class="meter-fill meter-negative" style="width: ${sentiment.negative_percentage
-          }%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${sentiment.total_tweets
-          } tweets</p>
+      <div class="sentiment-section">
+        <h4>
+          News Sentiment
+          <span class="sentiment-badge ${sentimentClass}">${description}</span>
+        </h4>
+        
+        <div class="sentiment-summary">${summary}</div>
+        
+        <div class="sentiment-meters">
+          <div class="sentiment-data">
+            <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
+              1
+            )}%</span></p>
+            <div class="meter">
+              <div class="meter-fill meter-positive" style="width: ${
+                sentiment.positive_percentage
+              }%"></div>
             </div>
-        `;
+          </div>
+          
+          <div class="sentiment-data">
+            <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
+              1
+            )}%</span></p>
+            <div class="meter">
+              <div class="meter-fill meter-negative" style="width: ${
+                sentiment.negative_percentage
+              }%"></div>
+            </div>
+          </div>
+          
+          <div class="sentiment-data">
+            <p><span>Mixed</span> <span>${sentiment.mixed_percentage.toFixed(
+              1
+            )}%</span></p>
+            <div class="meter">
+              <div class="meter-fill meter-mixed" style="width: ${
+                sentiment.mixed_percentage
+              }%"></div>
+            </div>
+          </div>
+          
+          <div class="sentiment-data">
+            <p><span>Neutral</span> <span>${sentiment.neutral_percentage.toFixed(
+              1
+            )}%</span></p>
+            <div class="meter">
+              <div class="meter-fill meter-neutral" style="width: ${
+                sentiment.neutral_percentage
+              }%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${
+          sentiment.total_news
+        } news articles</p>
+      </div>
+    `;
       } else {
         sentimentHTML = `
-            <div class="sentiment-section">
-                <h4>Social Sentiment</h4>
-                <p class="no-data">No social sentiment data available</p>
-            </div>
-            
-        `;
+      <div class="sentiment-section">
+        <h4>News Sentiment</h4>
+        <p class="no-data">No news sentiment data available</p>
+      </div>
+    `;
       }
 
       // Store stock data as a JSON string with escaped quotes to pass to the click handler
@@ -1022,24 +1099,36 @@
         <p><span>Sector</span> <span>${sector}</span></p>
         <p><span>Similarity Score</span> <span>${score.toFixed(3)}</span></p>
         
-        <p><span>Environment</span> <span>${environmentScore.toFixed(2)}</span></p>
+        <p><span>Environment</span> <span>${environmentScore.toFixed(
+          2
+        )}</span></p>
         <div class="meter">
-            <div class="meter-fill meter-env" style="width: ${getScoreFill(environmentScore)}"></div>
+            <div class="meter-fill meter-env" style="width: ${getScoreFill(
+              environmentScore
+            )}"></div>
         </div>
         
         <p><span>Social</span> <span>${socialScore.toFixed(2)}</span></p>
         <div class="meter">
-            <div class="meter-fill meter-soc" style="width: ${getScoreFill(socialScore)}"></div>
+            <div class="meter-fill meter-soc" style="width: ${getScoreFill(
+              socialScore
+            )}"></div>
         </div>
         
-        <p><span>Governance</span> <span>${governanceScore.toFixed(2)}</span></p>
+        <p><span>Governance</span> <span>${governanceScore.toFixed(
+          2
+        )}</span></p>
         <div class="meter">
-            <div class="meter-fill meter-gov" style="width: ${getScoreFill(governanceScore)}"></div>
+            <div class="meter-fill meter-gov" style="width: ${getScoreFill(
+              governanceScore
+            )}"></div>
         </div>
         
         <p><span>Total ESG</span> <span>${totalEsg.toFixed(2)}</span></p>
         <div class="meter">
-            <div class="meter-fill meter-total" style="width: ${getScoreFill(totalEsg)}"></div>
+            <div class="meter-fill meter-total" style="width: ${getScoreFill(
+              totalEsg
+            )}"></div>
         </div>
         
         <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
@@ -1050,7 +1139,6 @@
     </div>
   `;
     }
-
     function showMoreButton(hasMore) {
       if (!hasMore) return "";
 
@@ -1187,14 +1275,13 @@
           currentPage = 0;
           relevantSymbols.clear();
           renderResults();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         })
         .catch((err) => {
           console.error("Refine failed:", err);
           alert("Failed to refine. Please try again.");
         });
     }
-
 
     document.getElementById("answer-box").innerHTML =
       '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';

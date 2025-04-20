@@ -701,10 +701,18 @@
     }
 
     function determineRiskClass(risk) {
-      risk = String(risk).toLowerCase();
-      if (risk.includes("low")) return "risk-low";
-      if (risk.includes("medium")) return "risk-medium";
-      return "risk-high";
+      const numericRisk = Number(risk);
+      if (1 <= numericRisk && numericRisk <= 2) {
+        return "tier-excellent";
+      } else if (3 <= numericRisk && numericRisk <= 4) {
+        return "tier-good";
+      } else if (5 <= numericRisk && numericRisk <= 6) {
+        return "tier-average";
+      } else if (7 <= numericRisk && numericRisk <= 8) {
+        return "tier-below-average";
+      } else if (9 <= numericRisk && numericRisk <= 10) {
+        return "tier-poor";
+      }
     }
 
     function getScoreFill(score) {

@@ -39,7 +39,7 @@ query_system = EthicalInvestmentQuerySystem(stocks_data, sentiment_data)
 app = Flask(__name__)
 CORS(app)
 
-MAX_RESULTS = 12
+MAX_RESULTS = 24
 
 @app.route("/query", methods=["GET"])
 def query_endpoint():

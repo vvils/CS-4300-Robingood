@@ -395,6 +395,20 @@ class EthicalInvestmentQuerySystem:
                 else:
                     score += weight * float(stock[field])
                 total_weight += abs(weight)
+        
+        sentiment_boost_weight = 10
+        stock_symbol = stock.get("Symbol")
+
+        if stock_symbol and stock_symbol in self.sentiment_data:
+            try:
+                sentiment_dict = self.sentiment_data[stock_symbol].get('sentiment', {})
+                positive_percentage = float(sentiment_dict.get('positive_percentage', 50.0)) 
+                normalized_sentiment_score = max(0.0, min(1.0, positive_percentage / 100.0))
+                score += sentiment_boost_weight * normalized_sentiment_score
+                total_weight += sentiment_boost_weight
+
+            except (KeyError, TypeError, ValueError) as e:
+                pass
 
         if total_weight > 0:
             score = score / total_weight

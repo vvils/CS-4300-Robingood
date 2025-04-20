@@ -2,10 +2,7 @@
 <title>{% block title %}{% endblock %} - Robingood</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   * {
     margin: 0;
@@ -490,15 +487,9 @@
       </div>
       <div class="search-container">
         <div class="input-box" onclick="sendFocus()">
-          <img
-            src="{{ url_for('static', filename='images/mag.png') }}"
-            alt="Search icon"
-          />
-          <input
-            placeholder="Try 'low risk tech with high social scores"
-            id="filter-text-val"
-            onkeyup="filterText()"
-          />
+          <img src="{{ url_for('static', filename='images/mag.png') }}" alt="Search icon" />
+          <input placeholder="Try 'low risk tech with high social scores' " id="filter-text-val"
+            onkeyup="filterText()" />
         </div>
       </div>
     </div>
@@ -519,6 +510,7 @@
         <div id="social-score-explanation" class="score-explanation"></div>
         <div id="gov-score-explanation" class="score-explanation"></div>
         <div id="total-score-explanation" class="score-explanation"></div>
+        <div id="risk-score-explanation" class="score-explanation"></div>
       </div>
     </div>
   </div>
@@ -658,6 +650,38 @@
           text: "Serious ESG concerns. The company demonstrates inadequate attention to critical ESG factors that likely pose material risks to its business and investors. Immediate and comprehensive improvements are needed across environmental, social, and governance dimensions.",
         },
       ],
+      risk: [
+        {
+          min: 1,
+          max: 2,
+          tier: "Very Low",
+          text: "Exceptional corporate governance practices with strong board independence, shareholder-friendly policies, and transparent disclosure. Companies in this tier typically have multiple years of stable leadership and demonstrate proactive risk management.",
+        },
+        {
+          min: 3,
+          max: 4,
+          tier: "Low",
+          text: "Effective governance structures with minor areas for improvement. These companies generally maintain good board oversight and reasonable compensation alignment, though may have limited shareholder rights provisions.",
+        },
+        {
+          min: 5,
+          max: 6,
+          tier: "Moderate",
+          text: "Adequate governance controls with measurable exposure in specific areas such as board renewal practices or merger defenses. May exhibit higher insider ownership concentrations or less robust audit committees.",
+        },
+        {
+          min: 7,
+          max: 8,
+          tier: "High",
+          text: "Significant governance concerns including weak board accountability, problematic executive compensation structures, or inadequate shareholder rights protections. Often accompanied by above-average director tenure and limited transparency.",
+        },
+        {
+          min: 9,
+          max: 10,
+          tier: "Very High",
+          text: "Severe governance deficiencies with entrenched management, poor oversight mechanisms, and anti-takeover provisions. These companies typically show elevated risk of shareholder disputes and regulatory scrutiny.",
+        },
+      ]
     };
 
     function getSentimentClass(description) {
@@ -706,6 +730,12 @@
       if (tier === "average") return "tier-average";
       if (tier === "below average") return "tier-below-average";
       if (tier === "poor") return "tier-poor";
+      // Risk tiers
+      if (tier === "very low") return "tier-excellent";
+      if (tier === "low") return "tier-good";
+      if (tier === "moderate") return "tier-average";
+      if (tier === "high") return "tier-below-average";
+      if (tier === "very high") return "tier-poor";
       return "";
     }
 
@@ -725,9 +755,8 @@
         <h3>
           Environmental Score
           <span class="score-value">${stock.environmentScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(envExplanation.tier)}">${
-        envExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(envExplanation.tier)}">${envExplanation.tier
+        }</span>
         </h3>
         <p>${envExplanation.text}</p>
       `;
@@ -741,9 +770,8 @@
         <h3>
           Social Score
           <span class="score-value">${stock.socialScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${
-        socialExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${socialExplanation.tier
+        }</span>
         </h3>
         <p>${socialExplanation.text}</p>
       `;
@@ -757,9 +785,8 @@
         <h3>
           Governance Score
           <span class="score-value">${stock.governanceScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(govExplanation.tier)}">${
-        govExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(govExplanation.tier)}">${govExplanation.tier
+        }</span>
         </h3>
         <p>${govExplanation.text}</p>
       `;
@@ -770,11 +797,21 @@
         <h3>
           Total ESG Score
           <span class="score-value">${stock.totalEsg.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${
-        totalExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${totalExplanation.tier
+        }</span>
         </h3>
         <p>${totalExplanation.text}</p>
+      `;
+
+      // OverallRisk Score
+      const riskExplanation = getScoreExplanation("risk", stock.overallRisk);
+      document.getElementById("risk-score-explanation").innerHTML = `
+        <h3>
+          Overall Risk Score
+          <span class="score-value">${stock.overallRisk}</span> <!-- Display integer -->
+          <span class="score-tier ${getTierClass(riskExplanation.tier)}">${riskExplanation.tier}</span>
+        </h3>
+        <p>${riskExplanation.text}</p>
       `;
 
       // Show the modal
@@ -835,9 +872,8 @@
             <div class="sentiment-section">
                 <h4>
                     Social Sentiment
-                    <span class="sentiment-badge ${sentimentClass}">${
-          sentiment.description
-        }</span>
+                    <span class="sentiment-badge ${sentimentClass}">${sentiment.description
+          }</span>
                 </h4>
                 
                 <div class="sentiment-summary">${sentiment.summary}</div>
@@ -845,30 +881,27 @@
                 <div class="sentiment-meters">
                     <div>
                         <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
-                          1
-                        )}%</span></p>
+            1
+          )}%</span></p>
                         <div class="meter">
-                            <div class="meter-fill meter-positive" style="width: ${
-                              sentiment.positive_percentage
-                            }%"></div>
+                            <div class="meter-fill meter-positive" style="width: ${sentiment.positive_percentage
+          }%"></div>
                         </div>
                     </div>
                     
                     <div>
                         <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
-                          1
-                        )}%</span></p>
+            1
+          )}%</span></p>
                         <div class="meter">
-                            <div class="meter-fill meter-negative" style="width: ${
-                              sentiment.negative_percentage
-                            }%"></div>
+                            <div class="meter-fill meter-negative" style="width: ${sentiment.negative_percentage
+          }%"></div>
                         </div>
                     </div>
                 </div>
                 
-                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${
-                  sentiment.total_tweets
-                } tweets</p>
+                <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${sentiment.total_tweets
+          } tweets</p>
             </div>
         `;
       } else {
@@ -888,38 +921,38 @@
             <h3>${name} <small>${symbol}</small></h3>
             
             <p><span>Sector</span> <span>${sector}</span></p>
-            <p><span>Score</span> <span>${score.toFixed(3)}</span></p>
+            <p><span>Similarity Score</span> <span>${score.toFixed(3)}</span></p>
             
             <p><span>Environment</span> <span>${environmentScore.toFixed(
-              2
-            )}</span></p>
+        2
+      )}</span></p>
             <div class="meter">
                 <div class="meter-fill meter-env" style="width: ${getScoreFill(
-                  environmentScore
-                )}"></div>
+        environmentScore
+      )}"></div>
             </div>
             
             <p><span>Social</span> <span>${socialScore.toFixed(2)}</span></p>
             <div class="meter">
                 <div class="meter-fill meter-soc" style="width: ${getScoreFill(
-                  socialScore
-                )}"></div>
+        socialScore
+      )}"></div>
             </div>
             
             <p><span>Governance</span> <span>${governanceScore.toFixed(
-              2
-            )}</span></p>
+        2
+      )}</span></p>
             <div class="meter">
                 <div class="meter-fill meter-gov" style="width: ${getScoreFill(
-                  governanceScore
-                )}"></div>
+        governanceScore
+      )}"></div>
             </div>
             
             <p><span>Total ESG</span> <span>${totalEsg.toFixed(2)}</span></p>
             <div class="meter">
                 <div class="meter-fill meter-total" style="width: ${getScoreFill(
-                  totalEsg
-                )}"></div>
+        totalEsg
+      )}"></div>
             </div>
             
             <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>

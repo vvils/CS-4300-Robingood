@@ -17,93 +17,74 @@ class EthicalInvestmentQuerySystem:
 
         self.field_mappings = {
             "environmental": [
-                "environmentScore",
-                "environment",
-                "eco",
-                "green",
-                "sustainable",
-                "carbon",
-                "climate",
+                "environmentScore", "environment", "eco", "green", "sustainable",
+                "carbon", "climate", "emissions", "pollution", "conservation",
+                "renewable", "resource management", "water", "waste", "environmentally friendly",
+                "biodiversity", "land use", "environmental impact", "climate change",
+                "resource efficiency", "eco friendly", "carbon footprint", "ghg",
             ],
             "social": [
-                "socialScore",
-                "society",
-                "community",
-                "people",
-                "ethical",
-                "human rights",
-                "social responsibility",
+                "socialScore", "society", "community", "people", "ethical",
+                "human rights", "social responsibility", "labor", "employees",
+                "diversity", "inclusion", "supply chain", "product safety",
+                "consumer", "stakeholder", "human capital", "labor standards",
+                "employee relations", "health and safety", "community relations",
+                "customer welfare", "data privacy", "data security", "access", "affordability",
+                "supply chain ethics", "dei", 
             ],
             "governance": [
-                "governanceScore",
-                "management",
-                "leadership",
-                "board",
-                "transparency",
-                "corporate governance",
+                "governanceScore", "management", "leadership", "board", "transparency",
+                "corporate governance", "ethics", "compliance", "shareholder rights",
+                "executive pay", "audit", "reporting", "accountability",
+                "board independence", "shareholder engagement", "business ethics",
+                "anti corruption", "bribery", "risk management", "board structure",
+                "executive compensation", 
             ],
             "esg": [
-                "totalEsg",
-                "sustainability",
-                "responsible",
-                "ethical investing",
-                "sustainable investing",
+                "totalEsg", "sustainability", "responsible", "ethical investing",
+                "sustainable investing", "impact investing", "csr", 
+                "esg score", "esg rating", "triple bottom line",
             ],
             "risk": [
-                "overallRisk",
-                "risky",
-                "danger",
-                "safe",
-                "safety",
-                "volatility",
-                "stability",
+                "overallRisk", "risky", "danger", "safe", "safety", "volatility",
+                "stability", "uncertainty", "downside", "hazard", "exposure",
+                "financial risk", "operational risk", "reputational risk", "climate risk",
             ],
             "controversy": [
-                "highestControversy",
-                "controversial",
-                "scandal",
-                "dispute",
-                "issue",
-                "problems",
+                "highestControversy", "controversial", "scandal", "dispute", "issue",
+                "problems", "lawsuit", "fine", "allegation", "misconduct", "incident",
+                "litigation", "regulatory action", "negative press", "ethical breach",
+                "human rights violation", "environmental incident",
             ],
             "market cap": [
-                "marketCap",
-                "size",
-                "capitalization",
-                "market value",
-                "company size",
-                "large cap",
-                "small cap",
+                "marketCap", "size", "capitalization", "market value", "company size",
+                "large cap", "small cap", "mid cap", "value", "company valuation",
             ],
             "beta": [
-                "beta",
-                "volatility",
-                "stable",
-                "stability",
-                "market risk",
-                "market sensitivity",
+                "beta", "volatility", "stable", "stability", "market risk",
+                "market sensitivity", "systematic risk", "correlation", "market correlation",
             ],
             "percentile": [
-                "percentile",
-                "rank",
-                "standing",
-                "position",
-                "rating",
-                "relative performance",
+                "percentile", "rank", "standing", "position", "rating",
+                "relative performance", "quartile", "decile", "comparison", "peer ranking",
             ],
-            "sector": ["GICS Sector", "industry", "field", "domain", "market segment"],
+            "sector": [
+                "GICS Sector", "industry", "field", "domain", "market segment", "area",
+                "business type", "business area", "market",
+            ],
             "sentiment": [
-                "sentiment",
-                "social sentiment",
-                "public opinion",
-                "market sentiment",
-                "tweets",
-                "social media",
-                "twitter",
-                "buzz",
-                "popular opinion",
+                "sentiment", "social sentiment", "public opinion", "market sentiment",
+                "tweets", "social media", "twitter", "buzz", "popular opinion",
+                "discussion", "mentions", "online", "news", "perception", "media sentiment",
+                "investor sentiment", "social buzz", "reputation",
             ],
         }
+        self.multi_word_phrases = set(["a bit", "a lot"]) # Start with essentials
+        for category, synonyms in self.field_mappings.items():
+            for synonym in synonyms:
+                if " " in synonym:
+                    self.multi_word_phrases.add(synonym)
+        self.multi_word_phrases = sorted(list(self.multi_word_phrases), key=len, reverse=True)
         self.reverse_mappings = {}
         for key, values in self.field_mappings.items():
             for value in values:
@@ -111,27 +92,13 @@ class EthicalInvestmentQuerySystem:
 
         self.modifiers = {
             "high": [
-                "high",
-                "good",
-                "strong",
-                "great",
-                "impressive",
-                "positive",
-                "large",
-                "big",
-                "higher",
-                "better",
+                "high", "good", "strong", "great", "impressive", "positive", "large",
+                "big", "higher", "better", "excellent", "superior", "above average",
+                "top", "leading", "significant",
             ],
             "low": [
-                "low",
-                "bad",
-                "weak",
-                "poor",
-                "negative",
-                "minimal",
-                "small",
-                "lower",
-                "worse",
+                "low", "bad", "weak", "poor", "negative", "minimal", "small", "lower",
+                "worse", "inferior", "below average", "bottom", "reduced", "decreased",
             ],
         }
         self.reverse_modifiers = {}
@@ -140,20 +107,17 @@ class EthicalInvestmentQuerySystem:
                 self.reverse_modifiers[value] = 1.0 if key == "high" else -1.0
 
         self.intensifiers = {
-            "very": 1.5,
-            "extremely": 2.0,
-            "highly": 1.7,
-            "incredibly": 1.8,
-            "somewhat": 0.7,
-            "slightly": 0.5,
-            "a bit": 0.6,
-            "a lot": 1.6,
-            "tremendously": 1.9,
-            "exceptionally": 1.8,
-            "moderately": 0.8,
+            "very": 1.5, "extremely": 2.0, "highly": 1.7, "incredibly": 1.8,
+            "somewhat": 0.7, "slightly": 0.5, "a bit": 0.6, "a lot": 1.6,
+            "tremendously": 1.9, "exceptionally": 1.8, "moderately": 0.8,
+            "quite": 1.2, "rather": 0.9, "really": 1.4, "significantly": 1.6,
+            "especially": 1.7, "particularly": 1.6, "notably": 1.5,
         }
 
-        self.negations = ["not", "no", "never", "neither", "nor", "barely", "hardly"]
+        self.negations = [
+            "not", "no", "never", "neither", "nor", "barely", "hardly", "without",
+            "lacking", "non", "un", "dis", "anti", "against", "opposite", "absent", 
+        ]
 
         self.sectors = [
             "information technology",
@@ -238,9 +202,9 @@ class EthicalInvestmentQuerySystem:
         text = text.lower()
         text = re.sub(r"\s+", " ", text)
 
-        for multi_word in ["a bit", "a lot"]:
-            if multi_word in text:
-                text = text.replace(multi_word, multi_word.replace(" ", "_"))
+        for phrase in self.multi_word_phrases:
+            if phrase in text:
+                text = text.replace(phrase, phrase.replace(" ", "_"))
 
         text = re.sub(r"[^\w\s]", "", text)
         tokens = text.split()

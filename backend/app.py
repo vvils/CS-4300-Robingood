@@ -40,44 +40,6 @@ except json.JSONDecodeError:
 
 query_system = EthicalInvestmentQuerySystem(stocks_data, sentiment_data)
 
-
-# Create helper module (no need to modify the original class)
-def patch_rank_stocks():
-    # Create a patched version of rank_stocks that works with the new data format
-    original_rank_stocks = query_system.rank_stocks
-
-    def patched_rank_stocks(query_text):
-        results = original_rank_stocks(query_text)
-
-        # Update the sentiment format in the results
-        for result in results:
-            ticker = result["symbol"]
-            for item in sentiment_data:
-                if item["ticker"] == ticker:
-                    if "sentiment" in result:
-                        # Add mixed_percentage and neutral_percentage fields
-                        result["sentiment"]["mixed_percentage"] = item["sentiment"].get(
-                            "mixed_percentage", 0
-                        )
-                        result["sentiment"]["neutral_percentage"] = item[
-                            "sentiment"
-                        ].get("neutral_percentage", 0)
-                        # Rename total_tweets to total_news if needed
-                        if "total_tweets" in result["sentiment"]:
-                            result["sentiment"]["total_news"] = result["sentiment"][
-                                "total_tweets"
-                            ]
-                            # Keep total_tweets for backward compatibility
-                    break
-
-        return results
-
-    return patched_rank_stocks
-
-
-# Apply the patch
-query_system.rank_stocks = patch_rank_stocks()
-
 app = Flask(__name__)
 CORS(app)
 
@@ -93,7 +55,7 @@ def query_endpoint():
     # Log debug info about the first result
     if results and len(results) > 0:
         first = results[0]
-        print(f"First result: {first['symbol']}")
+        # print(f"First result: {first['symbol']}")
         if "sentiment" in first:
             print(f"Sentiment included: {list(first['sentiment'].keys())}")
         else:

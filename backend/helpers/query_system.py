@@ -659,7 +659,7 @@ class EthicalInvestmentQuerySystem:
                     score += weight * float(stock[field])
                 total_weight += abs(weight)
 
-        sentiment_boost_weight = 10
+        sentiment_boost_weight = 0.15
         stock_symbol = stock.get("Symbol")
 
         if stock_symbol and stock_symbol in self.sentiment_data:
@@ -667,7 +667,7 @@ class EthicalInvestmentQuerySystem:
                 # Access sentiment data from the new structure
                 sentiment_dict = self.sentiment_data[stock_symbol].get("sentiment", {})
                 positive_percentage = float(
-                    sentiment_dict.get("positive_percentage", 50.0)
+                    sentiment_dict.get("positive_percentage", 0.0)
                 )
                 normalized_sentiment_score = max(
                     0.0, min(1.0, positive_percentage / 100.0)
@@ -810,74 +810,6 @@ class EthicalInvestmentQuerySystem:
                 updated_query[key] = value
 
         return updated_query
-
-        """
-        Rank stocks based on how well they match the query with priority:
-        1. ESG terms (highest)
-        2. Sector names (middle)
-        3. Stock names (lowest)
-        """
-        if isinstance(query_text, dict):
-            query_vector = query_text
-        else:
-            query_vector = self.parse_query(query_text)
-
-        has_esg_keywords = False
-        for field, weight in query_vector.items():
-            if (
-                field not in ["specified_sectors", "include_sentiment"]
-                and weight != 0.0
-            ):
-                has_esg_keywords = True
-                break
-
-        scores = []
-        for stock in self.normalized_data:
-            if has_esg_keywords:
-
-                score = self.calculate_similarity(stock, query_vector)
-                match_type = "esg_factors"
-            else:
-
-                result = self.calculate_content_similarity(query_text, stock)
-                score = result["score"]
-                match_type = result["match_type"]
-
-            if score > 0:
-                stock_symbol = stock["Symbol"]
-                original_stock = self.original_stocks_map.get(stock_symbol, {})
-                result = {
-                    "symbol": stock_symbol,
-                    "name": stock["Full Name"],
-                    "score": score,
-                    "sector": stock.get("GICS Sector", "Unknown"),
-                    "match_type": match_type,
-                    "environmentScore": float(stock.get("environmentScore", 0)),
-                    "socialScore": float(stock.get("socialScore", 0)),
-                    "governanceScore": float(stock.get("governanceScore", 0)),
-                    "totalEsg": float(stock.get("totalEsg", 0)),
-                    "overallRisk": int(float(original_stock.get("overallRisk", 0))),
-                }
-
-                ticker = stock["Symbol"]
-                if ticker in self.sentiment_data:
-                    sentiment_info = self.sentiment_data[ticker]
-                    result["sentiment"] = {
-                        "description": sentiment_info["sentiment"]["description"],
-                        "positive_percentage": sentiment_info["sentiment"][
-                            "positive_percentage"
-                        ],
-                        "negative_percentage": sentiment_info["sentiment"][
-                            "negative_percentage"
-                        ],
-                        "total_tweets": sentiment_info["sentiment"]["total_tweets"],
-                        "summary": sentiment_info["summary"],
-                    }
-
-                scores.append(result)
-
-        scores.sort(key=lambda x: x["score"], reverse=True)
-        return scores
 
     def refine_results_with_feedback(
         self,

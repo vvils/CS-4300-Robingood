@@ -457,6 +457,8 @@
     color: #d32f2f;
   }
 
+  
+
   @media (max-width: 768px) {
     .top-bar {
       flex-direction: column;
@@ -476,6 +478,40 @@
       grid-template-columns: 1fr;
     }
   }
+
+  .thumbs-up-btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .thumbs-up-btn.clicked {
+    background: #2e7d32;
+  }
+
+  .refine-btn {
+    background: #1976d2;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 2rem;
+  }
+
+  .refine-btn:hover {
+    background: #125ea9;
+  }
+
 </style>
 
 <body>
@@ -918,6 +954,7 @@
                 <h4>Social Sentiment</h4>
                 <p class="no-data">No social sentiment data available</p>
             </div>
+            
         `;
       }
 
@@ -925,7 +962,8 @@
       const stockData = JSON.stringify(stock).replace(/"/g, "&quot;");
 
       return `
-        <div class="result" onclick="openScoreInfoModal(${stockData})">
+        <div class="result" data-symbol="${symbol}">
+          <div onclick="openScoreInfoModal(${stockData})" style="cursor: pointer;">
             <h3>${name} <small>${symbol}</small></h3>
             
             <p><span>Sector</span> <span>${sector}</span></p>
@@ -966,7 +1004,10 @@
             <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
             
             ${sentimentHTML}
-        </div>
+      <div style="text-align: right; margin-top: 0.5rem;">
+        <button onclick="markRelevant(event, '${symbol}')" class="thumbs-up-btn">👍 Mark Relevant</button>
+      </div>
+      </div>
       `;
     }
 
@@ -1012,6 +1053,7 @@
         tempDiv.innerHTML = showMoreButton(hasMoreResults);
         answerBox.appendChild(tempDiv.firstElementChild);
       }
+      renderRefineButton();
     }
 
     function loadMoreResults() {
@@ -1029,6 +1071,7 @@
         '<div class="empty-state">Searching for results...</div>';
 
       const queryValue = document.getElementById("filter-text-val").value;
+      lastQuery = queryValue;
 
       if (!queryValue.trim()) {
         answerBox.innerHTML =
@@ -1037,6 +1080,7 @@
       }
 
       currentPage = 0;
+      relevantSymbols.clear();
 
       fetch("/query?" + new URLSearchParams({ query: queryValue }).toString())
         .then((response) => response.json())
@@ -1050,6 +1094,64 @@
             '<div class="empty-state">An error occurred while fetching results. Please try again.</div>';
         });
     }
+
+    let relevantSymbols = new Set();
+    let lastQuery = "";
+
+    function markRelevant(event, symbol) {
+      event.stopPropagation(); // prevent modal from opening
+      const button = event.currentTarget;
+
+      if (relevantSymbols.has(symbol)) {
+        relevantSymbols.delete(symbol);
+        button.classList.remove("clicked");
+        button.textContent = "👍 Mark Relevant";
+      } else {
+        relevantSymbols.add(symbol);
+        button.classList.add("clicked");
+        button.textContent = "✅ Marked";
+      }
+    }
+
+    function renderRefineButton() {
+      const answerBox = document.getElementById("answer-box");
+      const refineBtn = document.createElement("div");
+      refineBtn.style.textAlign = "center";
+      refineBtn.innerHTML = `
+        <button class="refine-btn" onclick="submitRefinement()">Refine Results</button>
+      `;
+      answerBox.appendChild(refineBtn);
+    }
+
+    function submitRefinement() {
+      const displayedSymbols = allResults.map((stock) => stock.symbol);
+      const body = {
+        original_query: lastQuery,
+        relevant_symbols: Array.from(relevantSymbols),
+        displayed_symbols: displayedSymbols,
+      };
+
+      fetch("/refine", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to send refinement request");
+          return res.json();
+        })
+        .then((data) => {
+          alert("Refinement submitted successfully!");
+          console.log(data);
+        })
+        .catch((err) => {
+          console.error("Refine failed:", err);
+          alert("Failed to refine. Please try again.");
+        });
+    }
+    
 
     document.getElementById("answer-box").innerHTML =
       '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';

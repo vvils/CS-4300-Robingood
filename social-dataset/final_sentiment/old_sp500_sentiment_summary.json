@@ -1,0 +1,82 @@
+[
+  {
+    "ticker": "AAL",
+    "sentiment": {
+      "positive_percentage": 5.0,
+      "negative_percentage": 10.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 80.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BBWI",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 75.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BIO",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 0.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 90.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "BWA",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 25.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "CE",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 15.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "FMC",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 5.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 85.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "QRVO",
+    "sentiment": {
+      "positive_percentage": 0.0,
+      "negative_percentage": 30.0,
+      "mixed_percentage": 0.0,
+      "neutral_percentage": 70.0,
+      "total_news": 20
+    }
+  },
+  {
+    "ticker": "TFX",
+    "sentiment": {
+      "positive_percentage": 10.0,
+      "negative_percentage": 20.0,
+      "mixed_percentage": 5.0,
+      "neutral_percentage": 65.0,
+      "total_news": 20
+    }
+  }
+]

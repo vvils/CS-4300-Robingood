@@ -11,6 +11,18 @@ import numpy as np
 class EthicalInvestmentQuerySystem:
     def __init__(self, stocks_data, sentiment_data=None):
 
+        self.features = [
+            "environmentScore",
+            "socialScore",
+            "governanceScore",
+            "totalEsg",
+            "overallRisk",
+            "highestControversy",
+            "marketCap",
+            "beta",
+            "percentile",
+        ]
+
         self.sentiment_data = {}
         if sentiment_data:
             for item in sentiment_data:
@@ -371,7 +383,7 @@ class EthicalInvestmentQuerySystem:
             for stock in self.normalized_data
             if "Symbol" in stock
         }
-
+    
         self.available_sectors = set()
         for stock in stocks_data:
             if "GICS Sector" in stock and stock["GICS Sector"]:
@@ -382,6 +394,7 @@ class EthicalInvestmentQuerySystem:
         except LookupError:
             nltk.download("stopwords")
             self.stopwords = set(stopwords.words("english"))
+
 
     def tokenize(self, text):
         """Simple tokenization by splitting on spaces and removing punctuation"""
@@ -404,26 +417,14 @@ class EthicalInvestmentQuerySystem:
         Normalize stock data to make features comparable
         """
 
-        features = [
-            "environmentScore",
-            "socialScore",
-            "governanceScore",
-            "totalEsg",
-            "overallRisk",
-            "highestControversy",
-            "marketCap",
-            "beta",
-            "percentile",
-        ]
-
         feature_arrays = {}
-        for feature in features:
+        for feature in self.features:
             feature_arrays[feature] = [
                 float(stock.get(feature, 0)) for stock in stocks_data
             ]
 
         feature_min_max = {}
-        for feature in features:
+        for feature in self.features:
             values = feature_arrays[feature]
             if values:
                 feature_min_max[feature] = (min(values), max(values))
@@ -433,7 +434,7 @@ class EthicalInvestmentQuerySystem:
         normalized_data = []
         for stock in stocks_data:
             normalized_stock = stock.copy()
-            for feature in features:
+            for feature in self.features:
                 if feature in stock:
 
                     value = float(stock[feature])
@@ -773,29 +774,24 @@ class EthicalInvestmentQuerySystem:
         original_query,
         relevant_stocks,
         nonrelevant_stocks,
-        features,
         alpha=1.0,
         beta=0.75,
         gamma=0.15,
     ):
         updated_query = {}
 
-        for feature in features:
+        for feature in self.features:
             orig_weight = original_query.get(feature, 0.0)
 
             rel_centroid = 0.0
             if relevant_stocks:
-                rel_values = [
-                    float(stock.get(feature, 0.5)) for stock in relevant_stocks
-                ]
+                rel_values = [float(stock.get(feature, 0.0)) for stock in relevant_stocks]
                 if rel_values:
                     rel_centroid = np.mean(rel_values)
 
             nonrel_centroid = 0.0
             if nonrelevant_stocks:
-                nonrel_values = [
-                    float(stock.get(feature, 0.5)) for stock in nonrelevant_stocks
-                ]
+                nonrel_values = [float(stock.get(feature, 0.0)) for stock in nonrelevant_stocks]
                 if nonrel_values:
                     nonrel_centroid = np.mean(nonrel_values)
 
@@ -806,7 +802,7 @@ class EthicalInvestmentQuerySystem:
 
         # Carry over non-feature keys unchanged
         for key, value in original_query.items():
-            if key not in features:
+            if key not in self.features:
                 updated_query[key] = value
 
         return updated_query
@@ -823,19 +819,10 @@ class EthicalInvestmentQuerySystem:
         """
         Re-ranks stocks using user feedback (upvoted/downvoted symbols) via Rocchio.
         """
+        print(f"Relevant symbols: {relevant_symbols}")
         if not relevant_symbols:
             return self.rank_stocks(original_query_text)
-
         original_query = self.parse_query(original_query_text)
-        feature_keys = [
-            k
-            for k, v in original_query.items()
-            if k not in ["specified_sectors", "include_sentiment"]
-            and isinstance(v, (int, float))
-        ]
-
-        if not feature_keys:
-            return self.rank_stocks(original_query_text)
 
         # Get normalized stock data based on user feedback
         relevant_stocks = [
@@ -854,11 +841,12 @@ class EthicalInvestmentQuerySystem:
             original_query,
             relevant_stocks,
             nonrelevant_stocks,
-            feature_keys,
             alpha=alpha,
             beta=beta,
             gamma=gamma,
         )
+        print(f"Original query: {original_query}")
+        print(f"Updated query: {updated_query}")
 
         return self.rank_stocks(updated_query)
 

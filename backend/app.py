@@ -52,14 +52,14 @@ def query_endpoint():
     # Call rank_stocks for the initial, unrefinded results
     results = query_system.rank_stocks(user_query)[:MAX_RESULTS]
 
-    # Log debug info about the first result
-    if results and len(results) > 0:
-        first = results[0]
-        # print(f"First result: {first['symbol']}")
-        if "sentiment" in first:
-            print(f"Sentiment included: {list(first['sentiment'].keys())}")
-        else:
-            print("No sentiment data for first result")
+    # # Log debug info about the first result
+    # if results and len(results) > 0:
+    #     first = results[0]
+    #     # print(f"First result: {first['symbol']}")
+    #     if "sentiment" in first:
+    #         print(f"Sentiment included: {list(first['sentiment'].keys())}")
+    #     else:
+    #         print("No sentiment data for first result")
 
     return jsonify(results)
 

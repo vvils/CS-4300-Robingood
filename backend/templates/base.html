@@ -68,6 +68,7 @@
   .search-container {
     flex-grow: 1;
     max-width: 600px;
+    position: relative;
   }
 
   .input-box {
@@ -100,6 +101,49 @@
     outline: none;
     width: 100%;
     background: transparent;
+  }
+
+  /* Search Suggestions Dropdown */
+  .search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    margin-top: 8px;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
+    border: 1px solid var(--border);
+  }
+
+  .suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .suggestion-item:last-child {
+    border-bottom: none;
+  }
+
+  .suggestion-item:hover {
+    background-color: var(--light-green);
+  }
+
+  .suggestion-text {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+  }
+
+  .suggestion-category {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    display: block;
+    margin-top: 2px;
   }
 
   #answer-box {
@@ -596,7 +640,47 @@
             placeholder="Try 'low risk tech with high social scores' "
             id="filter-text-val"
             onkeyup="filterText()"
+            onfocus="showSuggestions()"
           />
+        </div>
+        <!-- Search suggestions dropdown -->
+        <div id="search-suggestions" class="search-suggestions">
+          <div
+            class="suggestion-item"
+            onclick="selectSuggestion('renewable energy companies')"
+          >
+            <span class="suggestion-text">renewable energy companies</span>
+            <span class="suggestion-category">General search</span>
+          </div>
+          <div
+            class="suggestion-item"
+            onclick="selectSuggestion('high governance low risk')"
+          >
+            <span class="suggestion-text">high governance low risk</span>
+            <span class="suggestion-category">ESG criteria</span>
+          </div>
+          <div class="suggestion-item" onclick="selectSuggestion('AAPL')">
+            <span class="suggestion-text">AAPL</span>
+            <span class="suggestion-category">Stock symbol</span>
+          </div>
+          <div
+            class="suggestion-item"
+            onclick="selectSuggestion('companies with positive news sentiment')"
+          >
+            <span class="suggestion-text"
+              >companies with positive news sentiment</span
+            >
+            <span class="suggestion-category">Sentiment analysis</span>
+          </div>
+          <div
+            class="suggestion-item"
+            onclick="selectSuggestion('low risk companies')"
+          >
+            <span class="suggestion-text"
+              >low environmental risk tech companies</span
+            >
+            <span class="suggestion-category">Risk assessment</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1192,6 +1276,45 @@
     function sendFocus() {
       document.getElementById("filter-text-val").focus();
     }
+
+    // New functions for suggestions
+    function showSuggestions() {
+      const input = document.getElementById("filter-text-val");
+      const suggestions = document.getElementById("search-suggestions");
+
+      // Only show suggestions if the input is empty
+      if (input.value.trim() === "") {
+        suggestions.style.display = "block";
+      }
+    }
+
+    function hideSuggestions() {
+      document.getElementById("search-suggestions").style.display = "none";
+    }
+
+    function selectSuggestion(text) {
+      const input = document.getElementById("filter-text-val");
+      input.value = text;
+      hideSuggestions();
+      filterText(); // Trigger the search
+    }
+
+    // Add event listener to hide suggestions when clicking outside
+    document.addEventListener("click", function (event) {
+      const searchContainer = document.querySelector(".search-container");
+      if (!searchContainer.contains(event.target)) {
+        hideSuggestions();
+      }
+    });
+
+    // Add event listener to hide suggestions when typing
+    document
+      .getElementById("filter-text-val")
+      .addEventListener("input", function () {
+        if (this.value.trim() !== "") {
+          hideSuggestions();
+        }
+      });
 
     function filterText() {
       const answerBox = document.getElementById("answer-box");

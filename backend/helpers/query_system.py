@@ -556,8 +556,6 @@ class EthicalInvestmentQuerySystem:
         return dict(query_vector)
         # File: helpers/query_system.py
 
-    # This modifies the rank_stocks method to work with the new data structure directly
-
     def rank_stocks(self, query_text):
         """
         Rank stocks based on how well they match the query with priority:
@@ -630,7 +628,6 @@ class EthicalInvestmentQuerySystem:
         scores.sort(key=lambda x: x["score"], reverse=True)
         return scores
 
-    # Also modify the calculate_similarity method to use the new data structure
     def calculate_similarity(self, stock, query_vector):
         """
         Calculate the similarity score between a stock and the query vector
@@ -665,7 +662,6 @@ class EthicalInvestmentQuerySystem:
 
         if stock_symbol and stock_symbol in self.sentiment_data:
             try:
-                # Access sentiment data from the new structure
                 sentiment_dict = self.sentiment_data[stock_symbol].get("sentiment", {})
                 positive_percentage = float(
                     sentiment_dict.get("positive_percentage", 0.0)

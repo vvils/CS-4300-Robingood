@@ -2,10 +2,7 @@
 <title>{% block title %}{% endblock %} - Robingood</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   * {
     margin: 0;
@@ -317,11 +314,13 @@
 
   /* New added styles for mixed and neutral sentiment */
   .meter-mixed {
-    background-color: #9c27b0; /* Purple for mixed sentiment */
+    background-color: #9c27b0;
+    /* Purple for mixed sentiment */
   }
 
   .meter-neutral {
-    background-color: #607d8b; /* Blue-grey for neutral sentiment */
+    background-color: #607d8b;
+    /* Blue-grey for neutral sentiment */
   }
 
   .sentiment-summary {
@@ -632,30 +631,17 @@
       </div>
       <div class="search-container">
         <div class="input-box" onclick="sendFocus()">
-          <img
-            src="{{ url_for('static', filename='images/mag.png') }}"
-            alt="Search icon"
-          />
-          <input
-            placeholder="Try 'low risk tech with high social scores' "
-            id="filter-text-val"
-            onkeyup="filterText()"
-            onfocus="showSuggestions()"
-          />
+          <img src="{{ url_for('static', filename='images/mag.png') }}" alt="Search icon" />
+          <input placeholder="Try 'low risk tech with high social scores' " id="filter-text-val" onkeyup="filterText()"
+            onfocus="showSuggestions()" />
         </div>
         <!-- Search suggestions dropdown -->
         <div id="search-suggestions" class="search-suggestions">
-          <div
-            class="suggestion-item"
-            onclick="selectSuggestion('renewable energy companies')"
-          >
-            <span class="suggestion-text">renewable energy companies</span>
-            <span class="suggestion-category">General search</span>
+          <div class="suggestion-item" onclick="selectSuggestion('tech companies')">
+            <span class="suggestion-text">tech companies</span>
+            <span class="suggestion-category">Industry filtering</span>
           </div>
-          <div
-            class="suggestion-item"
-            onclick="selectSuggestion('high governance low risk')"
-          >
+          <div class="suggestion-item" onclick="selectSuggestion('high governance low risk')">
             <span class="suggestion-text">high governance low risk</span>
             <span class="suggestion-category">ESG criteria</span>
           </div>
@@ -663,22 +649,12 @@
             <span class="suggestion-text">AAPL</span>
             <span class="suggestion-category">Stock symbol</span>
           </div>
-          <div
-            class="suggestion-item"
-            onclick="selectSuggestion('companies with positive news sentiment')"
-          >
-            <span class="suggestion-text"
-              >companies with positive news sentiment</span
-            >
+          <div class="suggestion-item" onclick="selectSuggestion('companies with positive news sentiment')">
+            <span class="suggestion-text">companies with positive news sentiment</span>
             <span class="suggestion-category">Sentiment analysis</span>
           </div>
-          <div
-            class="suggestion-item"
-            onclick="selectSuggestion('low risk companies')"
-          >
-            <span class="suggestion-text"
-              >low environmental risk tech companies</span
-            >
+          <div class="suggestion-item" onclick="selectSuggestion('low risk companies')">
+            <span class="suggestion-text">low environmental risk tech companies</span>
             <span class="suggestion-category">Risk assessment</span>
           </div>
         </div>
@@ -954,9 +930,8 @@
         <h3>
           Environmental Score
           <span class="score-value">${stock.environmentScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(envExplanation.tier)}">${
-        envExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(envExplanation.tier)}">${envExplanation.tier
+        }</span>
         </h3>
         <p>${envExplanation.text}</p>
       `;
@@ -970,9 +945,8 @@
         <h3>
           Social Score
           <span class="score-value">${stock.socialScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${
-        socialExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(socialExplanation.tier)}">${socialExplanation.tier
+        }</span>
         </h3>
         <p>${socialExplanation.text}</p>
       `;
@@ -986,9 +960,8 @@
         <h3>
           Governance Score
           <span class="score-value">${stock.governanceScore.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(govExplanation.tier)}">${
-        govExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(govExplanation.tier)}">${govExplanation.tier
+        }</span>
         </h3>
         <p>${govExplanation.text}</p>
       `;
@@ -999,9 +972,8 @@
         <h3>
           Total ESG Score
           <span class="score-value">${stock.totalEsg.toFixed(2)}</span>
-          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${
-        totalExplanation.tier
-      }</span>
+          <span class="score-tier ${getTierClass(totalExplanation.tier)}">${totalExplanation.tier
+        }</span>
         </h3>
         <p>${totalExplanation.text}</p>
       `;
@@ -1011,12 +983,10 @@
       document.getElementById("risk-score-explanation").innerHTML = `
         <h3>
           Overall Risk Score
-          <span class="score-value">${
-            stock.overallRisk
-          }</span> <!-- Display integer -->
-          <span class="score-tier ${getTierClass(riskExplanation.tier)}">${
-        riskExplanation.tier
-      }</span>
+          <span class="score-value">${stock.overallRisk
+        }</span> <!-- Display integer -->
+          <span class="score-tier ${getTierClass(riskExplanation.tier)}">${riskExplanation.tier
+        }</span>
         </h3>
         <p>${riskExplanation.text}</p>
       `;
@@ -1036,6 +1006,22 @@
 
     // Initialize modal listeners when the page loads
     document.addEventListener("DOMContentLoaded", function () {
+      const input = document.getElementById("filter-text-val");
+
+      // Show suggestions on focus
+      input.addEventListener("focus", showSuggestions);
+
+      // Check input value on each keyup
+      input.addEventListener("keyup", function (e) {
+        // If the input is now empty, show suggestions
+        if (this.value.trim() === "") {
+          showSuggestions();
+        } else {
+          hideSuggestions();
+        }
+      });
+
+      // Rest of your DOMContentLoaded code...
       const modal = document.getElementById("score-info-modal");
 
       // Close modal when clicking on the overlay (outside the modal content)
@@ -1115,52 +1101,47 @@
         <div class="sentiment-meters">
           <div class="sentiment-data">
             <p><span>Positive</span> <span>${sentiment.positive_percentage.toFixed(
-              1
-            )}%</span></p>
+          1
+        )}%</span></p>
             <div class="meter">
-              <div class="meter-fill meter-positive" style="width: ${
-                sentiment.positive_percentage
-              }%"></div>
+              <div class="meter-fill meter-positive" style="width: ${sentiment.positive_percentage
+          }%"></div>
             </div>
           </div>
           
           <div class="sentiment-data">
             <p><span>Negative</span> <span>${sentiment.negative_percentage.toFixed(
-              1
-            )}%</span></p>
+            1
+          )}%</span></p>
             <div class="meter">
-              <div class="meter-fill meter-negative" style="width: ${
-                sentiment.negative_percentage
-              }%"></div>
+              <div class="meter-fill meter-negative" style="width: ${sentiment.negative_percentage
+          }%"></div>
             </div>
           </div>
           
           <div class="sentiment-data">
             <p><span>Mixed</span> <span>${sentiment.mixed_percentage.toFixed(
-              1
-            )}%</span></p>
+            1
+          )}%</span></p>
             <div class="meter">
-              <div class="meter-fill meter-mixed" style="width: ${
-                sentiment.mixed_percentage
-              }%"></div>
+              <div class="meter-fill meter-mixed" style="width: ${sentiment.mixed_percentage
+          }%"></div>
             </div>
           </div>
           
           <div class="sentiment-data">
             <p><span>Neutral</span> <span>${sentiment.neutral_percentage.toFixed(
-              1
-            )}%</span></p>
+            1
+          )}%</span></p>
             <div class="meter">
-              <div class="meter-fill meter-neutral" style="width: ${
-                sentiment.neutral_percentage
-              }%"></div>
+              <div class="meter-fill meter-neutral" style="width: ${sentiment.neutral_percentage
+          }%"></div>
             </div>
           </div>
         </div>
         
-        <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${
-          sentiment.total_news
-        } news articles</p>
+        <p style="font-size: 0.8rem; text-align: right; color: var(--text-light);">Based on ${sentiment.total_news
+          } news articles</p>
       </div>
     `;
       } else {
@@ -1184,35 +1165,35 @@
         <p><span>Similarity Score</span> <span>${score.toFixed(3)}</span></p>
         
         <p><span>Environment</span> <span>${environmentScore.toFixed(
-          2
-        )}</span></p>
+        2
+      )}</span></p>
         <div class="meter">
             <div class="meter-fill meter-env" style="width: ${getScoreFill(
-              environmentScore
-            )}"></div>
+        environmentScore
+      )}"></div>
         </div>
         
         <p><span>Social</span> <span>${socialScore.toFixed(2)}</span></p>
         <div class="meter">
             <div class="meter-fill meter-soc" style="width: ${getScoreFill(
-              socialScore
-            )}"></div>
+        socialScore
+      )}"></div>
         </div>
         
         <p><span>Governance</span> <span>${governanceScore.toFixed(
-          2
-        )}</span></p>
+        2
+      )}</span></p>
         <div class="meter">
             <div class="meter-fill meter-gov" style="width: ${getScoreFill(
-              governanceScore
-            )}"></div>
+        governanceScore
+      )}"></div>
         </div>
         
         <p><span>Total ESG</span> <span>${totalEsg.toFixed(2)}</span></p>
         <div class="meter">
             <div class="meter-fill meter-total" style="width: ${getScoreFill(
-              totalEsg
-            )}"></div>
+        totalEsg
+      )}"></div>
         </div>
         
         <p style="margin-top: 1rem;"><span>Risk</span> <span class="risk-badge ${riskClass}">${overallRisk}</span></p>
@@ -1279,12 +1260,18 @@
 
     // New functions for suggestions
     function showSuggestions() {
+      const suggestions = document.getElementById("search-suggestions");
+      suggestions.style.display = "block";
+    }
+
+    function checkInputAndShowSuggestions() {
       const input = document.getElementById("filter-text-val");
       const suggestions = document.getElementById("search-suggestions");
 
-      // Only show suggestions if the input is empty
       if (input.value.trim() === "") {
         suggestions.style.display = "block";
+      } else {
+        suggestions.style.display = "none";
       }
     }
 
@@ -1308,25 +1295,25 @@
     });
 
     // Add event listener to hide suggestions when typing
-    document
-      .getElementById("filter-text-val")
-      .addEventListener("input", function () {
-        if (this.value.trim() !== "") {
-          hideSuggestions();
-        }
-      });
+    document.getElementById("filter-text-val").addEventListener("input", function () {
+      // Check if input is empty after typing/deleting
+      if (this.value.trim() === "") {
+        showSuggestions();
+      } else {
+        hideSuggestions();
+      }
+    });
 
     function filterText() {
       const answerBox = document.getElementById("answer-box");
-      answerBox.innerHTML =
-        '<div class="empty-state">Searching for results...</div>';
+      answerBox.innerHTML = '<div class="empty-state">Searching for results...</div>';
 
       const queryValue = document.getElementById("filter-text-val").value;
       lastQuery = queryValue;
 
       if (!queryValue.trim()) {
-        answerBox.innerHTML =
-          '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';
+        answerBox.innerHTML = '<div class="empty-state">Enter search terms to find ESG-friendly stocks</div>';
+        showSuggestions(); // Show suggestions when input is cleared
         return;
       }
 
@@ -1341,8 +1328,7 @@
         })
         .catch((error) => {
           console.error("Error fetching query results:", error);
-          answerBox.innerHTML =
-            '<div class="empty-state">An error occurred while fetching results. Please try again.</div>';
+          answerBox.innerHTML = '<div class="empty-state">An error occurred while fetching results. Please try again.</div>';
         });
     }
 

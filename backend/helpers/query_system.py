@@ -581,8 +581,9 @@ class EthicalInvestmentQuerySystem:
 
         scores = []
         for stock in self.normalized_data:
+            tags = []
             if has_esg_keywords:
-                score = self.calculate_similarity(stock, query_vector)
+                score, tags = self.calculate_similarity(stock, query_vector)
                 match_type = "esg_factors"
             else:
                 result = self.calculate_content_similarity(query_text, stock)
@@ -598,6 +599,7 @@ class EthicalInvestmentQuerySystem:
                     "score": score,
                     "sector": stock.get("GICS Sector", "Unknown"),
                     "match_type": match_type,
+                    "tags": tags,
                     "environmentScore": float(stock.get("environmentScore", 0)),
                     "socialScore": float(stock.get("socialScore", 0)),
                     "governanceScore": float(stock.get("governanceScore", 0)),
@@ -635,30 +637,42 @@ class EthicalInvestmentQuerySystem:
         """
         score = 0.0
         total_weight = 0.0
+        feature_contributions = {}
+        NUM_TAGS = 3
+        passed_sector_filter = False
 
         if "specified_sectors" in query_vector:
             if (
                 stock.get("GICS Sector", "").lower()
                 not in query_vector["specified_sectors"]
             ):
-                return 0.0
-
+                return 0.0, []
+            else:
+                passed_sector_filter = True 
+        
         for field, weight in query_vector.items():
             if field in ["specified_sectors", "include_sentiment"]:
                 continue
             if field in stock and weight != 0.0:
+                contribution = 0.0
+
                 if field in ["overallRisk", "highestControversy", "beta"]:
                     if weight < 0:
                         field_value = 1 - float(stock[field])
-                        score += abs(weight) * field_value
+                        contribution += abs(weight) * field_value
                     else:
-                        score += weight * float(stock[field])
+                        contribution += weight * float(stock[field])
                 else:
-                    score += weight * float(stock[field])
+                    contribution += weight * float(stock[field])
+                
+                if contribution > 0:
+                    feature_contributions[field] = contribution
+                score += contribution
                 total_weight += abs(weight)
 
         sentiment_boost_weight = 0.15
         stock_symbol = stock.get("Symbol")
+        sentiment_contribution = 0.0
 
         if stock_symbol and stock_symbol in self.sentiment_data:
             try:
@@ -669,16 +683,26 @@ class EthicalInvestmentQuerySystem:
                 normalized_sentiment_score = max(
                     0.0, min(1.0, positive_percentage / 100.0)
                 )
-                score += sentiment_boost_weight * normalized_sentiment_score
+                sentiment_contribution = sentiment_boost_weight * normalized_sentiment_score
+                score += sentiment_contribution
                 total_weight += sentiment_boost_weight
+
+                if query_vector.get("include_sentiment", False):
+                    if sentiment_contribution > 0:
+                        feature_contributions["sentiment"] = sentiment_contribution
 
             except (KeyError, TypeError, ValueError) as e:
                 pass
 
         if total_weight > 0:
             score = score / total_weight
+        
+        sorted_contributors = sorted(feature_contributions.items(), key=lambda item: item[1], reverse=True)
+        top_tags = [feature for feature, _ in sorted_contributors[:NUM_TAGS]]
+        if passed_sector_filter:
+            top_tags.insert(0, "filtered_sector")
 
-        return score
+        return score, top_tags
 
     def calculate_sector_similarity(self, query, stock):
         """

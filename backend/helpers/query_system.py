@@ -116,6 +116,10 @@ class EthicalInvestmentQuerySystem:
                 "csr",
                 "esg score",
                 "esg rating",
+                "esg ratings",
+                "esg performance",
+                "esg factors",
+                "esg criteria",
                 "triple bottom line",
             ],
             "risk": [
@@ -570,6 +574,7 @@ class EthicalInvestmentQuerySystem:
         else:
             query_vector = self.parse_query(query_text)
 
+        print(f"Query vector: {query_vector}")
         has_esg_keywords = False
         for field, weight in query_vector.items():
             if (
@@ -590,7 +595,7 @@ class EthicalInvestmentQuerySystem:
                 score = result["score"]
                 match_type = result["match_type"]
 
-            if score > 0:
+            if score > 0 or score <= 0:
                 stock_symbol = stock["Symbol"]
                 original_stock = self.original_stocks_map.get(stock_symbol, {})
                 result = {
@@ -670,32 +675,37 @@ class EthicalInvestmentQuerySystem:
                 score += contribution
                 total_weight += abs(weight)
 
-        sentiment_boost_weight = 0.15
-        stock_symbol = stock.get("Symbol")
-        sentiment_contribution = 0.0
+        if query_vector.get("include_sentiment", False):
 
-        if stock_symbol and stock_symbol in self.sentiment_data:
-            try:
-                sentiment_dict = self.sentiment_data[stock_symbol].get("sentiment", {})
-                positive_percentage = float(
-                    sentiment_dict.get("positive_percentage", 0.0)
-                )
-                normalized_sentiment_score = max(
-                    0.0, min(1.0, positive_percentage / 100.0)
-                )
-                sentiment_contribution = sentiment_boost_weight * normalized_sentiment_score
-                score += sentiment_contribution
-                total_weight += sentiment_boost_weight
+            sentiment_boost_weight = 0.015
+            stock_symbol = stock.get("Symbol")
+            sentiment_contribution = 0.0
 
-                if query_vector.get("include_sentiment", False):
+            if stock_symbol and stock_symbol in self.sentiment_data:
+                try:
+                    sentiment_dict = self.sentiment_data[stock_symbol].get("sentiment", {})
+                    positive_percentage = float(
+                        sentiment_dict.get("positive_percentage", 0.0)
+                    )
+                    negative_percentage = float(
+                        sentiment_dict.get("negative_percentage", 0.0)
+                    )
+                    net_sentiment_score = (positive_percentage - negative_percentage) / 100.0
+                    sentiment_contribution = sentiment_boost_weight * net_sentiment_score
+                    score += sentiment_contribution
+                    total_weight += sentiment_boost_weight
+
                     if sentiment_contribution > 0:
-                        feature_contributions["sentiment"] = sentiment_contribution
+                        if sentiment_contribution > 0:
+                            feature_contributions["sentiment"] = sentiment_contribution
 
-            except (KeyError, TypeError, ValueError) as e:
-                pass
+                except (KeyError, TypeError, ValueError) as e:
+                    pass
 
         if total_weight > 0:
             score = score / total_weight
+        else:
+            final_score = 0.0
         
         sorted_contributors = sorted(feature_contributions.items(), key=lambda item: item[1], reverse=True)
         top_tags = [feature for feature, _ in sorted_contributors[:NUM_TAGS]]

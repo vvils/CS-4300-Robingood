@@ -676,8 +676,8 @@ class EthicalInvestmentQuerySystem:
                 total_weight += abs(weight)
 
         if query_vector.get("include_sentiment", False):
-
-            sentiment_boost_weight = 0.015
+            sentiment_query_weight = query_vector.get("sentiment", 1.0)
+            sentiment_boost_weight = 0.15
             stock_symbol = stock.get("Symbol")
             sentiment_contribution = 0.0
 
@@ -691,7 +691,7 @@ class EthicalInvestmentQuerySystem:
                         sentiment_dict.get("negative_percentage", 0.0)
                     )
                     net_sentiment_score = (positive_percentage - negative_percentage) / 100.0
-                    sentiment_contribution = sentiment_boost_weight * net_sentiment_score
+                    sentiment_contribution = sentiment_query_weight * sentiment_boost_weight * net_sentiment_score
                     score += sentiment_contribution
                     total_weight += sentiment_boost_weight
 

@@ -595,7 +595,7 @@ class EthicalInvestmentQuerySystem:
                 score = result["score"]
                 match_type = result["match_type"]
 
-            if score > 0 or score <= 0:
+            if score > 0 or (match_type == "esg_factors" and score < 0):
                 stock_symbol = stock["Symbol"]
                 original_stock = self.original_stocks_map.get(stock_symbol, {})
                 result = {

@@ -23,9 +23,7 @@ with open(json_file_path, "r") as file:
 
 
 # Load the new sentiment data - and convert it to a list which is what the class expects
-new_sentiment_file_path = os.path.join(
-    current_directory, "../social-dataset/final_sentiment/final_sentiment_summary.json"
-)
+new_sentiment_file_path = os.path.join(current_directory, "final_sentiment_summary.json")
 sentiment_data = []
 try:
     with open(new_sentiment_file_path, "r") as file:
